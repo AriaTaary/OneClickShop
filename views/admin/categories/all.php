@@ -19,7 +19,7 @@
                 <a href="/profile/admin/categories/add/"><button class="login-button add">Добавить</button></a>
             </div>
 
-            <div>
+            <div class="table">
                 <?php if (!empty($data)) : ?>
                     <table style="border-collapse: collapse">
                         <?php foreach ($data as $item) : ?>

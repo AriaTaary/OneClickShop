@@ -41,7 +41,7 @@
                                             <p class="counter-tag">Количество:</p>
                                             <span class="counter"><?= $product['count'] ?></span>
                                         </div>
-                                        <p><?= $product['product']['price'] ?> ₽</p>
+                                        <p><?= $product['product']['price'] ?> руб. </p>
                                     </div>
                                 </div>
                             <?php endforeach; ?>

@@ -15,7 +15,7 @@
     <div class="account-content">
         <p class="header-text">Все заказы</p>
         <div class="orders">
-            <div>
+            <div class="table">
                 <?php if (!empty($data)) : ?>
                     <table style="border-collapse: collapse">
                         <tr>

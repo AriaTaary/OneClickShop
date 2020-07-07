@@ -14,12 +14,12 @@
 
     <div class="account-content">
         <p class="header-text">Все товары</p>
-        <div class="orders">
+
+            <div class="orders">
             <div>
                 <a href="/profile/admin/products/add/"><button class="login-button add">Добавить</button></a>
             </div>
-
-            <div>
+                <div class="table">
                 <?php if (!empty($data)) : ?>
                     <table style="border-collapse: collapse">
                         <tr>
@@ -56,7 +56,7 @@
                 <?php else: ?>
                     <p>Товаров ещё нет</p>
                 <?php endif; ?>
+                </div>
             </div>
-        </div>
     </div>
 </div>

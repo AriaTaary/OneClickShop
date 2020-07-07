@@ -133,6 +133,10 @@
     flex-wrap: wrap;
 }
 
+.table{
+    overflow: scroll;
+}
+
  }
 
 @media all and (max-width: 870px) {
@@ -175,6 +179,18 @@
     .menu-mobile{
         display: flex;
         padding-right: 0px;
+    }
+
+    .modal-title-log-in, .modal-title-registration{
+        font-size: 12pt;
+    }
+
+    .login-form{
+        width: 300px;
+    }
+
+    .enter{
+        font-size: 12pt;
     }
 
     .menu-li{
@@ -262,8 +278,6 @@
 
 
   }
-
-
 
 @media all and (max-width: 800px) {
     .menu-desktop-li{
@@ -367,6 +381,8 @@
     .basket-product-name{
         margin-right: 0px;
         text-align: start;
+        max-width: 75vw;
+        overflow: hidden;
     }
    
 }
@@ -441,8 +457,15 @@
 
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 500px) {
+    .adress-page{
+        flex-direction: column;
+    }
 
+    .contact-map{
+        margin-left: 0px;
+        max-width: 90vw;
+    }
 
 }
 
