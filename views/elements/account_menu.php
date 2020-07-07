@@ -11,13 +11,21 @@
     <?php if (\base\App::$session->user->getRole() == "moderator" || \base\App::$session->user->getRole() == "administrator") : ?>
         <p class="profile-category">Администрирование:</p>
         <li class="account-menu-li ">
-            <a href="/profile/admin/categories/" class="account-menu-a menu-a">Категории</a>
+            <a href="/profile/admin/products/" class="account-menu-a menu-a">Все товары</a>
         </li>
         <li class="account-menu-li ">
-            <a href="/profile/admin/brands/" class="account-menu-a menu-a">Бренды</a>
+            <a href="/profile/admin/orders/" class="account-menu-a menu-a">Все заказы</a>
+        </li>
+    <?php endif; ?>
+    <?php if (\base\App::$session->user->getRole() == "administrator") : ?>
+        <li class="account-menu-li ">
+            <a href="/profile/admin/categories/" class="account-menu-a menu-a">Все категории</a>
         </li>
         <li class="account-menu-li ">
-            <a href="/profile/admin/products/" class="account-menu-a menu-a">Товары</a>
+            <a href="/profile/admin/brands/" class="account-menu-a menu-a">Все бренды</a>
+        </li>
+        <li class="account-menu-li ">
+            <a href="/profile/admin/sponsors/" class="account-menu-a menu-a">Все спонсоры</a>
         </li>
     <?php endif; ?>
     <li class="account-menu-li ">

@@ -90,7 +90,7 @@ class BrandsController extends BaseController
         $delete = $this->component->delete($id);
 
         if ($delete === true) {
-            header("Location: /admin/brands/");
+            header("Location: /profile/admin/brands/");
         }
         else {
             new View("errors/delete", $this->page);
