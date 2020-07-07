@@ -83,6 +83,46 @@ class ProductsComponent extends BaseComponent
         }
     }
 
+    public function getByCategorySorted($category_id, $sort)
+    {
+        $this->setTable();
+
+        switch ($sort) {
+            case "name":
+                $sort = "name asc";
+                break;
+            case "nameRevert":
+                $sort = "name desc";
+                break;
+            case "price":
+                $sort = "price asc";
+                break;
+            case "priceRevert":
+                $sort = "price desc";
+                break;
+            case "default":
+                $sort = null;
+                break;
+            default:
+                $sort = null;
+        }
+
+        if ($sort) {
+            $products = $this->table->get("*", ['category_id' => $category_id], [$sort]);
+        }
+        else {
+            $products = $this->table->get("*", ['category_id' => $category_id]);
+        }
+
+        if (!empty($products)) {
+            $products = $this->setImages($products);
+            return $products;
+        }
+        else {
+            return null;
+        }
+    }
+
     public function getByArticle($article)
     {
         $this->setTable();
@@ -93,6 +133,19 @@ class ProductsComponent extends BaseComponent
             $product = $this->setCategoryData($product);
 
             return $product;
+        }
+        else {
+            return null;
+        }
+    }
+
+    public function search($search)
+    {
+        $this->setTable();
+
+        if (!empty($products = $this->table->search($search))) {
+            $products = $this->setImages($products);
+            return $products;
         }
         else {
             return null;

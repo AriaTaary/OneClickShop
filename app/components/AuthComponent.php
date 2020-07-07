@@ -127,7 +127,7 @@ class AuthComponent extends Component
      *  Генерирует соль - строку с рандомным набором символов
      * для улучшения безопасности пароля.
      */
-    private function generateSalt()
+    public function generateSalt()
     {
         $salt = '';
         $saltLength = 45;
@@ -149,7 +149,7 @@ class AuthComponent extends Component
      * @param string $salt     - соль
      * @return string
      */
-    private function generateHashPassword($password, $salt)
+    public function generateHashPassword($password, $salt)
     {
         $password512 = hash('sha512', $password);
         $salt512 = hash('sha512', $salt);

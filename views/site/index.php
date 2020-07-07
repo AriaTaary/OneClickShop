@@ -57,7 +57,7 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                                     </div>
                                     <!-- /.card-heading -->
                                     <div class="card-buttons">
-                                        <button class="button-to-basket">
+                                        <button class="button-to-basket" onclick="cart(<?= $product['id'] ?>, 1)">
                                             <span>В корзину</span>
                                             <img src="/img/basket-2.svg" alt="" class="button-card-img">
                                         </button>

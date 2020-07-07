@@ -21,5 +21,9 @@ abstract class BaseController extends Controller
             $component = new AuthComponent();
             $component->setSession($_COOKIE['auth_token']);
         }
+
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = [];
+        }
     }
 }

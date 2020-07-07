@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var $user
+ */
+?>
+
 <div class="account-view">
 
     <div class="account-menu">
@@ -9,33 +15,23 @@
         <div class="orders">
             <div class="account-info">
                 <p>Имя:</p>
-                <p>Имя</p>
+                <p><?= $user['name'] ?></p>
                 <!-- <button id="change-name" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
             </div>
             <div class="account-info">
                 <p>Фамилия:</p>
-                <p>Не указана</p>
+                <p><?= is_null($user['surname']) ? "Не указана" : $user['surname'] ?></p>
                 <!-- <button id="change-surname" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
             </div>
             <div class="account-info">
                 <p>Email:</p>
-                <p>OneClick@mail.ru</p>
+                <p><?= $user['email'] ?></p>
                 <!-- <button id="change-email" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
             </div>
             <div class="account-info">
                 <p>Телефон:</p>
-                <p>+7 777 000 00 00</p>
+                <p><?= is_null($user['phone']) ? "Не указан" : $user['phone'] ?></p>
                 <!-- <button id="change-phone" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
-            </div>
-            <div class="account-info">
-                <p>Адрес доставки:</p>
-                <p>Не указан</p>
-                <!-- <button id="change-adress" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
-            </div>
-            <div class="account-info">
-                <p>Пароль:</p>
-                <p>*******</p>
-                <!-- <button id="change-password" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
             </div>
             <div>
                 <a href="/profile/edit/">

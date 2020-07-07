@@ -14,7 +14,7 @@ $categories = $categoriesComponent->getAll();
     <div class="header-main">
         <div class="content-top">
             <div class="form-search-top">
-                <form action="" method="get">
+                <form action="/search/" method="get">
                     <button type="submit"><img class="search" src="/img/search_w.png"></button>
                     <input name="s" placeholder="Поиск..." type="search">
                 </form>
@@ -48,7 +48,9 @@ $categories = $categoriesComponent->getAll();
                     </li>
                 </ul>
             </div>
-            <button class="button-basket" type="submit"><img class="basket" src="/img/basket.png"></button>
+            <a href="/basket/">
+                <button class="button-basket" type="submit"><img class="basket" src="/img/basket.png"></button>
+            </a>
             <?php if (\base\App::$session->user->isAuth()) : ?>
                 <a href="/profile/">
                     <button class="button-person"><img class="person" src="/img/person.png"></button>

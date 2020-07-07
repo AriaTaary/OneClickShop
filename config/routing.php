@@ -8,6 +8,7 @@ use app\controllers\AuthController;
 use app\controllers\CatalogueController;
 use app\controllers\OrderController;
 use app\controllers\ProfileController;
+use app\controllers\SearchController;
 use app\controllers\SiteController;
 use base\routing\Routing;
 
@@ -21,10 +22,15 @@ $routing->add('GET', '/contacts/', SiteController::class, 'contacts');
 /** Каталог */
 $routing->add('GET', '/category/{category}/', CatalogueController::class, 'category');
 $routing->add('GET', '/products/{article}/', CatalogueController::class, 'item');
+$routing->add('POST', '/products/favourite/', CatalogueController::class, 'favourite');
+
+/** Поиск */
+$routing->add('GET', '/search/', SearchController::class, 'search');
 
 /** Корзина и офорление заказов */
 $routing->add("GET", "/basket/", OrderController::class, "basket");
 $routing->add("GET", "/order/", OrderController::class, "order");
+$routing->add('POST', '/cart/', OrderController::class, 'cart');
 
 /** Авторизация */
 $routing->add("POST", "/auth/", AuthController::class, "auth");

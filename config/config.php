@@ -21,7 +21,9 @@ return [
 
     /** Названия скриптовых файлов из public_html/js/, которые нужно подключить */
     'scripts' => [
-        // 'script.js'
+        // 'script.js',
+        'jquery.js',
+        'forms.js',
     ],
 
     /** Ссылка на favicon относительно public_html/ */

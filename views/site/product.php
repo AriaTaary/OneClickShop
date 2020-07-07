@@ -2,6 +2,7 @@
 /**
  * @var $product
  * @var $images
+ * @var $favourite
  */
 ?>
 
@@ -26,12 +27,18 @@
             <p class="normal-text">Производитель: <?= $product['brand'] ?></p>
             <p class="grey-text">В наличии</p>
             <p class="huge-text"><?= $product['price'] ?> руб.</p>
-            
-            <button class="button-to-basket" type="submit">Добавить в корзину</button>
+
+            <button class="button-to-basket" type="submit" onclick="cart(<?= $product['id'] ?>, 1)">Добавить в корзину</button>
             <!-- <button id="favorite" class="favorite" type="submit" onclick="favorite.innerText = 'Добавлено в избранное'" type="button" value="Добавить в избранное">Добавить в избранное</button> -->
             <!-- <button id="favorite" class="favorite" type="submit" onClick="change()" value="Добавить в избранное">Добавить в избранное</button> -->
-            <button id="not-favorite" class="not-favorite is-open" type="submit" value="Добавить в избранное">Добавить в избранное</button>
-            <button id="favorite" class="favorite" type="submit" value="Удалить из избранного">Удалить из избранного</button>
+
+            <?php if ($favourite !== null) : ?>
+                <?php if ($favourite === true) : ?>
+                    <button id="favorite" class="favorite is-open" value="Удалить из избранного" onclick="favourite(<?= $product['id'] ?>, <?= \base\App::$session->user->getId() ?>)">Удалить из избранного</button>
+                <?php else : ?>
+                    <button id="not-favorite" class="not-favorite is-open" value="Добавить в избранное" onclick="favourite(<?= $product['id'] ?>, <?= \base\App::$session->user->getId() ?>)">Добавить в избранное</button>
+                <?php endif; ?>
+            <?php endif; ?>
 
             <h2 class="product-info-title">Описание:</h2>
             <p class="product-info"><?= $product['description'] ?></p>
