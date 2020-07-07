@@ -11,11 +11,12 @@
         <a href="/profile/settings/" class="account-menu-a menu-a">Настройки аккаунта</a>
     </li>
     <li class="account-menu-li account-exit-mobile">
-        <a href="" class="account-menu-a menu-a menu-exit"><button class="login-button enter"><span class="button-to-basket-text">Выйти</span></button></a>
+    <a href="/logout/" class="account-menu-a menu-a menu-exit"><button class="login-button enter">Выйти</button></a>
     </li>
     </div>
-    <div class="account-menu-element">
+    
     <?php if (\base\App::$session->user->getRole() == "moderator" || \base\App::$session->user->getRole() == "administrator") : ?>
+    <div class="account-menu-element element-admin">
         <p class="profile-category">Администрирование:</p>
         <li class="account-menu-li ">
             <a href="/profile/admin/products/" class="account-menu-a menu-a">Все товары</a>
@@ -34,8 +35,8 @@
         <li class="account-menu-li ">
             <a href="/profile/admin/sponsors/" class="account-menu-a menu-a">Все спонсоры</a>
         </li>
-    <?php endif; ?>
     </div>
+    <?php endif; ?>
     <div class="account-menu-element">
     <li class="account-menu-li account-exit">
         <a href="/logout/" class="account-menu-a menu-a menu-exit"><button class="login-button enter">Выйти</button></a>
