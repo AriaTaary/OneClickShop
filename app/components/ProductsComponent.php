@@ -16,6 +16,9 @@ class ProductsComponent extends BaseComponent
     /** @var ProductsTable */
     private $table;
 
+    /** @var CategoriesTable */
+    private $categoriesTable;
+
     public function getAll()
     {
         $this->setTable();
@@ -46,19 +49,7 @@ class ProductsComponent extends BaseComponent
         $this->setTable();
 
         $products = $this->table->get("*", null, ['id desc'], $num);
-
-        $imagesComponent = new ImagesComponent();
-        foreach ($products as $key => $product) {
-            $images = $imagesComponent->getOneImage($product['id']);
-            if (!empty($images)) {
-                $image = $images[0]['name'];
-            }
-            else {
-                $image = "no_image.jpeg";
-            }
-
-            $products[$key]['image'] = $image;
-        }
+        $products = $this->setImages($products);
 
         return $products;
     }
@@ -67,8 +58,41 @@ class ProductsComponent extends BaseComponent
     {
         $this->setTable();
 
-        if (!empty($product = $this->table->get("*", ['id' => $id]))) {
-            return $product[0];
+        if (!empty($products = $this->table->get("*", ['id' => $id]))) {
+            $products = $this->setImages($products);
+            $product = $products[0];
+            $product = $this->setCategoryData($product);
+
+            return $product;
+        }
+        else {
+            return null;
+        }
+    }
+
+    public function getByCategory($category_id)
+    {
+        $this->setTable();
+
+        if (!empty($products = $this->table->get("*", ['category_id' => $category_id]))) {
+            $products = $this->setImages($products);
+            return $products;
+        }
+        else {
+            return null;
+        }
+    }
+
+    public function getByArticle($article)
+    {
+        $this->setTable();
+
+        if (!empty($products = $this->table->get("*", ['article' => $article]))) {
+            $products = $this->setImages($products);
+            $product = $products[0];
+            $product = $this->setCategoryData($product);
+
+            return $product;
         }
         else {
             return null;
@@ -267,5 +291,46 @@ class ProductsComponent extends BaseComponent
             $product['name'] == $name &&
             $product['description'] == $description &&
             $product['price'] == $price;
+    }
+
+    private function setImages($products)
+    {
+        $imagesComponent = new ImagesComponent();
+        foreach ($products as $key => $product) {
+            $images = $imagesComponent->getOneImage($product['id']);
+            if (!empty($images)) {
+                $image = $images[0]['name'];
+            }
+            else {
+                $image = "no_image.jpeg";
+            }
+
+            $products[$key]['image'] = $image;
+        }
+
+        return $products;
+    }
+
+    private function setCategoryData($product)
+    {
+        $this->setCategoriesTable();
+
+        if (!empty($category = $this->categoriesTable->get("*", ['id' => $product['category_id']]))) {
+            $category = $category[0];
+            $product['category_name'] = $category['name'];
+            $product['category_link'] = $category['link'];
+
+            return $product;
+        }
+        else {
+            return $product;
+        }
+    }
+
+    private function setCategoriesTable()
+    {
+        if (is_null($this->categoriesTable)) {
+            $this->categoriesTable = new CategoriesTable();
+        }
     }
 }

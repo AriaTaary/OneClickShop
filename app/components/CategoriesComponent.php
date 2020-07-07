@@ -32,6 +32,18 @@ class CategoriesComponent extends BaseComponent
         }
     }
 
+    public function getByLink($link)
+    {
+        $this->setTable();
+
+        if ($category = $this->table->get("*", ['link' => $link])) {
+            return $category[0];
+        }
+        else {
+            return null;
+        }
+    }
+
     public function add($name, $link, $image)
     {
         $this->setTable();

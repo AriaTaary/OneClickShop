@@ -7,7 +7,7 @@
 ?>
 
 <div style="margin: 10px;">
-    <a href="/admin/products/add/">Добавить</a>
+    <a href="/profile/admin/products/add/">Добавить</a>
 </div>
 
 <div>
@@ -32,10 +32,10 @@
                     <td style="border: 1px solid black; padding: 10px;"><?= $item['brand'] ?></td>
                     <td style="border: 1px solid black; padding: 10px;"><?= $item['price'] ?></td>
                     <td style="border: 1px solid black; padding: 10px;">
-                        <a style="text-decoration: none; color: black" href="/admin/products/edit/<?= $item['id'] ?>">Редактировать</a>
+                        <a style="text-decoration: none; color: black" href="/profile/admin/products/edit/<?= $item['id'] ?>">Редактировать</a>
                     </td>
                     <td style="border: 1px solid black; padding: 10px;">
-                        <form action="/admin/products/delete/" style="width: 100%" method="post">
+                        <form action="/profile/admin/products/delete/" style="width: 100%" method="post">
                             <input type="number" name="id" value="<?= $item['id'] ?>" style="display: none">
                             <button type="submit" style="background: none; font-size: 12pt; width: 100%">Удалить</button>
                         </form>

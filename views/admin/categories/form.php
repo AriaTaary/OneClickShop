@@ -16,7 +16,7 @@
 <?php endif; ?>
 
 <div style="margin-left: 50px">
-    <form action="/admin/categories/<?php if (isset($edit)) : ?>edit<?php else : ?>add<?php endif; ?>/" enctype="multipart/form-data" method="post" style="display: flex; flex-direction: column; justify-items: left; height: 100%">
+    <form action="/profile/admin/categories/<?php if (isset($edit)) : ?>edit<?php else : ?>add<?php endif; ?>/" enctype="multipart/form-data" method="post" style="display: flex; flex-direction: column; justify-items: left; height: 100%">
         <div style="width: 100%">
             <label for="name">Название</label>
             <input type="text" name="name" id="name" required style="color: white" <?php if (isset($error) || isset($edit)) : ?>value="<?= $data['name'] ?>"<?php endif; ?>>
