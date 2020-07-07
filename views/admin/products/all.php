@@ -13,6 +13,16 @@
 <div>
     <?php if (!empty($data)) : ?>
         <table style="border-collapse: collapse">
+            <tr>
+                <td style="border: 1px solid black; padding: 10px;">ID</td>
+                <td style="border: 1px solid black; padding: 10px;">Артикул</td>
+                <td style="border: 1px solid black; padding: 10px;">Название</td>
+                <td style="border: 1px solid black; padding: 10px;">Категория</td>
+                <td style="border: 1px solid black; padding: 10px;">Бренд</td>
+                <td style="border: 1px solid black; padding: 10px;">Цена</td>
+                <td style="border: 1px solid black; padding: 10px;"></td>
+                <td style="border: 1px solid black; padding: 10px;"></td>
+            </tr>
             <?php foreach ($data as $item) : ?>
                 <tr>
                     <td style="border: 1px solid black; padding: 10px;"><?= $item['id'] ?></td>
