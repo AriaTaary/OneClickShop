@@ -54,8 +54,8 @@ $path = new base\routing\Path();
 
             <div class="modal-body">
 
-                <div id="blocklogin" class="block-log-in block-open">
-                    <form action="/auth/" method="post">
+                <!-- <div id="blocklogin" class="block-log-in block-open"> -->
+                    <form id="blocklogin" class="block-log-in block-open" action="/auth/" method="post">
                         <div class="login-form">
                             <p class="login-name">Email:</p>
                             <input name="email" placeholder="Введите email" type="email">
@@ -65,14 +65,14 @@ $path = new base\routing\Path();
                             <input name="password" placeholder="Введите пароль" type="password">
                         </div>
                         <div class="modal-footer">
-                            <div class="footer-buttons">
-                                <button class="login-button">Войти</button>
-                            </div>
+                            <!-- <div class="footer-buttons"> -->
+                                <button class="login-button enter">Войти</button>
+                            <!-- </div> -->
                         </div>
                     </form>
-                </div>
-                <div id="blockregin" class="block-reg-in">
-                    <form action="/register/" method="post">
+                <!-- </div> -->
+                <!-- <div id="blockregin" class="block-reg-in"> -->
+                    <form id="blockregin" class="block-reg-in" action="/register/" method="post">
                         <div class="login-form">
                             <p class="login-name">Имя:</p>
                             <input name="name" placeholder="Введите имя" type="text">
@@ -91,11 +91,11 @@ $path = new base\routing\Path();
                         </div>
                         <div class="modal-footer">
                             <div class="footer-buttons">
-                                <button class="login-button">Зарегестрироваться</button>
+                                <button class="login-button registration">Зарегестрироваться</button>
                             </div>
                         </div>
                     </form>
-                </div>  
+                <!-- </div>   -->
                 
             </div>
             <!-- /.modal-body -->

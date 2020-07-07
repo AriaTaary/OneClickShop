@@ -1,59 +1,4 @@
-<p class="header-text">Оформление заказа</p>
-        
-<div class="main-content">
-
-    <div class="content-order">
-
-        <div class="forms">
-
-            <form  class="order-form" action="/auth/" method="post">  
-                <div class="form-order-info">
-                    <p class="login-name"> Имя:</p>
-                    <input id="name" placeholder="Введите имя" name="name" type="text">
-                </div>
-                <div class="form-order-info">
-                <p class="login-name">Телефон:</p>
-                    <input id="phone" placeholder="Введите телефон"  name="phone" type="number">
-                </div>  
-                <div class="form-order-info">
-                    <p class="login-name">Email:</p>
-                    <input id="email" placeholder="Введите email" name="email" type="email">
-                </div>
-                <div class="form-order-info">
-                    <p class="login-name">Адрес:</p>
-                    <input id="address" placeholder="Введите адрес"  name="address" type="text">
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
-                    <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
-
-                    <script>
-                    $("#address").suggestions({
-                    token: "e46187871e0f9c2d03ad9e8bb252e69524c0a664",
-                    type: "ADDRESS",
-                    onSelect: function(suggestion) {
-                    console.log(suggestion);
-                    }
-                    });
-                    </script>
-                </div>
-                <div class="order-button">
-                    <a href="/order/">
-                        <button class="button-to-pay" type="submit">Оформить заказ</button>
-                    </a>
-                </div>
-            </form>
-
-        </div>
-
-    
-
-        <div class="map">
-
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=2d388866-8d95-4f3e-86af-c21d9700f708" type="text/javascript"></script>
-        <!-- <script src="yandexmap.js" type="text/javascript"></script> -->
-        <script>
-            
-            ymaps.ready(init);
+ymaps.ready(init);
 
 function init() {
     var myPlacemark,
@@ -115,14 +60,3 @@ function init() {
         });
     }
 }
-
-
-        </script>
-        <p class="map-header">Кликните по карте, чтобы узнать свой адрес:</p>
-        <div id="map"></div>
-
-    
-        </div>
-
-</div>
-</div>

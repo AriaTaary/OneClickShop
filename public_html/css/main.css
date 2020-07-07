@@ -6,6 +6,10 @@
     padding: 0px;  
 }
 
+a{
+    text-decoration: none;
+}
+
 body {
     display: flex;
   flex-direction: column;
@@ -77,6 +81,8 @@ body {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
+    align-items: center;
+    padding-bottom: 5px;
 }
 
 .menu{
@@ -191,7 +197,7 @@ body {
     border: none;
     padding: 5px;
     height: 35px;
-    width: 50px;
+    min-width: 50px;
     margin-right: 10px;
     outline: none;
     cursor: pointer;
@@ -203,7 +209,7 @@ body {
     border: none;
     padding: 5px;
     height: 35px;
-    width: 50px;
+    min-width: 50px;
     outline: none;
     cursor: pointer;
     /* display: flex;
@@ -287,7 +293,8 @@ article img{ /*размер изображений слайдера*/
 }
 
 label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
-	cursor: pointer;
+    cursor: pointer;
+    align-self: center;
 }
 
 .all input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
@@ -398,8 +405,11 @@ label, a{ /*при наведении на стрелки или переклю�
 
 .product-li{
     display: flex;
-    flex-direction: column;
     /* margin-right: 50px; */
+}
+
+.product-link{
+    text-decoration: none;
 }
 
 /* .product-li:last-child{
@@ -493,8 +503,12 @@ label, a{ /*при наведении на стрелки или переклю�
 .list-two{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-between;
+    /* align-items: flex-end;
+    align-self: flex-end; */
+    text-align: end;
+    /* align-content: flex-end; */
+    padding-bottom: 10px;
 }
 
 .phone, .mail, .adress {
@@ -518,6 +532,10 @@ label, a{ /*при наведении на стрелки или переклю�
     text-decoration: none;
     color: white;
     padding-bottom: 25px;
+}
+
+.menu-footer:hover{
+    color: #FF5A00;
 }
 
 .author{
@@ -669,8 +687,8 @@ select{
 
 .filter{
     display: flex;
-    flex-direction: column;
-    align-self: center;
+    flex-direction: row;
+    /* align-self: center; */
     margin-left: 20px;
 }
 
@@ -706,7 +724,7 @@ select{
     margin-bottom: 10px;
 }
 
-.form-filter{
+.filter-form{
     width: 85px;
     display: flex;
     flex-direction: column;
@@ -726,7 +744,7 @@ select{
     display: none;
     /* display: block; */
     position: absolute;
-    margin-top: 30px;
+    margin-top: 205px;
     padding: 10px;
     background-color: white;
     border: 1px solid rgb(180, 180, 180);
@@ -747,11 +765,13 @@ select{
     margin: 10px 50px 10px 23px;
   } */
 
-  /* .title-filter{
-      margin-bottom: 10px;
-  } */
+  .title-filter{
+      align-self: center;
+    }
 
-  .brand, .color, .price{
+  .brand, .price{
+      display: flex;
+      flex-direction: column;
       margin-bottom: 10px;
   }
 
@@ -762,6 +782,38 @@ select{
 
   .brand-title, .color-title, .price-title{
       padding-bottom: 10px;
+      justify-content: flex-start;
+      display: flex;
+  }
+
+  .price-form{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 5px;
+  }
+
+  .price-label{
+      margin-right: 10px;
+      width: 20px;
+  }
+
+  .price-input{
+    border: 1px dotted rgb(150, 150, 150);
+    background-color: white;
+    width: 150px;
+    border-radius: 3px;
+  }
+
+
+  .filter-choice{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+  }
+
+  .filter-input{
+      width: 20px;
+      margin-right: 20px;
   }
 
   /* .sub-menu {
@@ -1026,7 +1078,7 @@ select{
     border-radius: 3px;
     font-size: 14pt;
     margin: 10px 0 10px 0;
-    width: 165px;
+    width: 160px;
     outline: none;
     padding: 8px 16px;
     cursor: pointer;
@@ -1037,6 +1089,38 @@ select{
     /* background-color: white;
     color:#ee652b;
     border: 2px solid #ee652b; */
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+.filter-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-for-filter{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    background-color:rgb(180, 180, 180);
+    border: none;
+    color: white;
+    height: 26px;
+    border-radius: 3px;
+    font-size: 12pt;
+    margin: 10px 0 0 0;
+    width: 120px;
+    outline: none;
+    padding: 0px 5px;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-for-filter:hover{
     background-color: black;
     color: white;
     border: 2px solid black;
@@ -1065,7 +1149,7 @@ select{
 }
 
 .product-info-title{
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .product-info{
@@ -1110,6 +1194,18 @@ h2{
     flex-direction: column;
 }
 
+.basket-column{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end;
+}
+
+.order-battons{
+    display: flex;
+    flex-direction: column;
+}
+
 .button-to-pay{
     background-color:#ee652b;
     color: white;
@@ -1117,33 +1213,31 @@ h2{
     border-radius: 3px;
     font-size: 14pt;
     margin: 10px 0 20px 0;
-    max-width: 250px;
-    border: 2px solid #ee652b;
+    width: 200px;
+    border: none;
     outline: none;
 }
 
 .button-to-pay:hover{
-    background-color: white;
-    color:#ee652b;
-    border: 2px solid #ee652b;
+    background-color: black;
+    color:white;
 }
 
 .button-to-go{
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+    background-color: black;
+    color: white;
+    border: none;
     height: 40px;
     border-radius: 3px;
     font-size: 14pt;
     margin: 10px 0 20px 0;
-    max-width: 250px;
+    width: 200px;
     outline: none;
 }
 
 .button-to-go:hover{
-    background-color: black;
+    background-color: #ee652b;
     color:white;
-    border: 2px solid black;
 }
 
 .promo{
@@ -1227,9 +1321,18 @@ h2{
 
 .buttons-basket{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+}
 
+.order-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.order-button{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .price{
@@ -1328,6 +1431,8 @@ h2{
 }
 
 .modal-body{
+    display: flex;
+    flex-direction: column;
     margin-bottom: 15px;
 }
 
@@ -1349,22 +1454,37 @@ h2{
 .block-log-in{
     display: none;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-align: start;
+    align-items: flex-start;
 }
 
 .block-reg-in{
     display: none;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-align: start;
+    align-items: flex-start;
 }
 
 .block-open{
     display: flex;
 }
 
+/* .login-body{
+    display: flex;
+    flex-direction: column;
+} */
+
 
 .login-form{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 415px;
     /* width: 304px;
     height: 35px;
     width: 100%;
@@ -1381,6 +1501,9 @@ h2{
     color: black;
     margin-bottom: 10px;
     font-size: 12pt;
+    display: flex;
+    justify-content: flex-start;
+
 }
 
 .login-form form{
@@ -1400,10 +1523,11 @@ h2{
     border-radius: 3px 3px 3px 3px;
     background-color: white;
     border: 1px solid black;
+    color: black;
 }
 
 .modal-footer{
-    
+    width: 100%;
     justify-content: center;
 }
 
@@ -1415,8 +1539,15 @@ h2{
     padding: 0 10px;
     border-radius: 3px;
     font-size: 14pt;
-    max-width: 200px;
     outline: none;
+}
+
+.enter{
+    width: 80px;
+}
+
+.registration{
+    width: 210px;
 }
 
 
@@ -1438,6 +1569,8 @@ h2{
 
 .product-li{
     margin-left: 20px;
+
+    text-decoration: none;
 }
 
 .product-li:first-child{
@@ -1446,6 +1579,7 @@ h2{
 
 .product-page-card{
     margin-right: 0px;
+    text-decoration: none;
 }
 
 /* .product-page-card{
@@ -1483,12 +1617,14 @@ h2{
 
 .card-text{
     padding: 20px 23px 15px 23px;
+    text-decoration: none;
 }
 
 .card-heading{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-decoration: none;
 }
 
 .card-title{
@@ -1497,6 +1633,7 @@ h2{
     font-size: 20px;
     line-height: 32px;
     color: #000000;
+    text-decoration: none;
 }
 
 .card-title-reg{
@@ -1504,6 +1641,7 @@ h2{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .card-buttons{
@@ -1523,6 +1661,7 @@ h2{
     line-height: 32px;
     color: #000000;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 .button-card-img{
@@ -1752,4 +1891,82 @@ h2{
 .change-info-form{
     display: flex;
     flex-direction: column;
+}
+
+.order-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    align-self: flex-start;
+    text-align: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.form-item{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    text-align: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.content-order{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+#map {
+    width: 100%;
+    height: 95%;
+}
+
+.map{
+    margin-left: 40px;
+    width: 50vw;
+}
+
+.map-header{
+    margin-bottom: 10px;
+}
+
+
+.form-order-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+.form-order-info form{
+    justify-content: flex-start;
+    
+    height: 35px;
+    border: none;
+    outline: none;
+    color: #9E9C9C;
+    font-size: 10pt;
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom: 25px;
+}
+
+.form-order-info input{
+    border-radius: 3px 3px 3px 3px;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    width: 100%;
 }

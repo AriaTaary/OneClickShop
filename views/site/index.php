@@ -48,13 +48,14 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                 <?php foreach ($products as $product) : ?>
                     <li class="product-li">
                         <!-- /.card -->
-                        <a href="/products/<?= $product['article'] ?>/">
+                        <a class="product-link" href="/products/<?= $product['article'] ?>/">
                             <div class="card">
                                 <img src="/uploads/<?= $product['image'] ?>" alt="" class="card-img">
                                 <div class="card-text">
                                     <div class="card-heading">
                                         <h3 class="card-title card-title-reg"><?= $product['name'] ?></h3>
                                     </div>
+                        </a>
                                     <!-- /.card-heading -->
                                     <div class="card-buttons">
                                         <button class="button-to-basket" onclick="cart(<?= $product['id'] ?>, 1)">
@@ -66,7 +67,6 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                                 </div>
                                 <!-- /.card-text -->
                             </div>
-                        </a>
                         <!-- /.card -->
                     </li>
                 <?php endforeach; ?>

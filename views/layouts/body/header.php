@@ -9,7 +9,9 @@ $categories = $categoriesComponent->getAll();
 
 <div class="header-content">
     <div class="logo">
-        <img src="/img/Logo-without.png" class="logo-img">
+        <a href="/">
+            <img src="/img/Logo-without.png" class="logo-img">
+        </a>
     </div>
     <div class="header-main">
         <div class="content-top">

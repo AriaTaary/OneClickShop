@@ -24,6 +24,7 @@ return [
         // 'script.js',
         'jquery.js',
         'forms.js',
+        'yandexmap.js',
     ],
 
     /** Ссылка на favicon относительно public_html/ */

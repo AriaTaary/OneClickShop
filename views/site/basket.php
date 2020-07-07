@@ -26,21 +26,23 @@
     <?php endforeach; ?>
 
     <div class="buttons-basket">
-        <div></div>
-        <div class="column">
             <div class="price-row">
                 <p class="black-text price">Итого</p>
                 <p class="black-text"><?= $sum ?> руб.</p>
             </div>
 
-            <a href="/order/">
-                <button class="button-to-pay" type="submit">Оформить заказ</button>
-            </a>
-            <a href="/">
-                <button class="button-to-go"type="submit">Продолжить покупки</button>
-            </a>
-
-        </div>
+            <div class="order-buttons">
+                <div class="order-button">
+                    <a href="/order/">
+                        <button class="button-to-pay" type="submit">Оформить заказ</button>
+                    </a>
+                </div>
+                <div class="order-button">
+                    <a href="/">
+                        <button class="button-to-go"type="submit">Продолжить покупки</button>
+                    </a>
+                </div>
+            </div>
     </div>
 
 </div>

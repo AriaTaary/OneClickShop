@@ -51,36 +51,51 @@ new Element("breadcrumb", ["elements" => [
                     </label>
                 </span>
 
-                <form action="/category/<?= $category['link'] ?>/">
+                <form class="filter-form" action="/category/<?= $category['link'] ?>/">
                     <ul>
                         <li>
                             <div class="brand">
                                 <p class="brand-title">Бренд:</p>
-                                <div>
+                                <div class="filter-choice">
+                                    <input class="filter-input" type="checkbox" value="1" id="ch-1">
                                     <label for="ch-1">Бренд 1</label>
-                                    <input type="checkbox" value="1" id="ch-1">
                                 </div>
-                                <div>
+                                <div class="filter-choice">
+                                    <input class="filter-input"type="checkbox" value="2" id="ch-2">
                                     <label for="ch-2">Бренд 2</label>
-                                    <input type="checkbox" value="2" id="ch-2">
                                 </div>
-                                <div>
+                                <div class="filter-choice">
+                                    <input class="filter-input" type="checkbox" value="3" id="ch-3">
                                     <label for="ch-3">Бренд 3</label>
-                                    <input type="checkbox" value="3" id="ch-3">
                                 </div>
-                                <div>
+                                <div class="filter-choice">
+                                    <input class="filter-input" type="checkbox" value="4" id="ch-4">
                                     <label for="ch-4">Бренд 4</label>
-                                    <input type="checkbox" value="4" id="ch-4">
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="price">
                                 <p class="price-title">Цена:</p>
-                                <label for="in-1" >От</label>
-                                <input class="price-1" type="number" id="in-1">
-                                <label for="in-2" >до</label>
-                                <input class="price-2" type="number" id="in-2">
+                                <div class="price-form">
+                                    <label class="price-label" for="in-1" >от</label>
+                                    <input class="price-input" type="number" id="in-1">
+                                </div>
+                                <div class="price-form">
+                                    <label class="price-label" for="in-2" >до</label>
+                                    <input class="price-input" type="number" id="in-2">
+                                </div>
+                                <!-- <label for="in-2" >до</label>
+                                <input class="price-2" type="number" id="in-2"> -->
+                            </div>
+                        </li>
+                        <li>
+                            <div class="filter-button">
+                                <a href="" class="links">
+                                    <button class="button-for-filter">
+                                        <span class="button-card-text">Применить</span>
+                                    </button>
+                                </a>
                             </div>
                         </li>
                     </ul>

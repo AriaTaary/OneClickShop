@@ -42,7 +42,7 @@ class OrderController extends BaseController
     {
         $cart = $_SESSION['cart'];
         $sum = $_SESSION['cart_sum'];
-        var_dump($cart, $sum);
+        // var_dump($cart, $sum);
 
         new View("site/order", $this->page);
     }

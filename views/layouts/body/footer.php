@@ -21,10 +21,18 @@
                 <img class="mastercard-img" src="/img/mastercard2.png">
             </li>
             <li class="list-two">
-                <a href="/" class="menu-footer">Главная</a>
-                <a href="/" class="menu-footer">Каталог</a>
-                <a href="/delivery/" class="menu-footer">Доставка и Оплата</a>
-                <a href="/contacts/" class="menu-footer">Контакты</a>
+                <div>
+                    <a href="/" class="menu-footer">Главная</a>
+                </div>
+                <div>
+                    <a href="/" class="menu-footer">Каталог</a>
+                </div>
+                <div>
+                    <a href="/delivery/" class="menu-footer">Доставка и Оплата</a>
+                </div>
+                <div>
+                    <a href="/contacts/" class="menu-footer">Контакты</a>
+                </div>
             </li>
         </ul>
     </div>
