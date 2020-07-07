@@ -20,32 +20,37 @@
         <div class="account-info">
             <p>Имя:</p>
             <p>Имя</p>
-            <button id="change-name" class="change" type="submit" value="Добавить в избранное">Изменить</button>
+            <!-- <button id="change-name" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
         </div>
         <div class="account-info">
             <p>Фамилия:</p>
             <p>Не указана</p>
-            <button id="change-surname" class="change" type="submit" value="Добавить в избранное">Изменить</button>
+            <!-- <button id="change-surname" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
         </div>
         <div class="account-info">
             <p>Email:</p>
             <p>OneClick@mail.ru</p>
-            <button id="change-email" class="change" type="submit" value="Добавить в избранное">Изменить</button>
+            <!-- <button id="change-email" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
         </div>
         <div class="account-info">
             <p>Телефон:</p>
             <p>+7 777 000 00 00</p>
-            <button id="change-phone" class="change" type="submit" value="Добавить в избранное">Изменить</button>
+            <!-- <button id="change-phone" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
         </div>
         <div class="account-info">
             <p>Адрес доставки:</p>
             <p>Не указан</p>
-            <button id="change-adress" class="change" type="submit" value="Добавить в избранное">Изменить</button>
+            <!-- <button id="change-adress" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
         </div>
         <div class="account-info">
             <p>Пароль:</p>
             <p>*******</p>
-            <button id="change-password" class="change" type="submit" value="Добавить в избранное">Изменить</button>
+            <!-- <button id="change-password" class="change" type="submit" value="Добавить в избранное">Изменить</button> -->
+        </div>
+        <div>
+            <a href="">
+                <button id="change-password" class="change" type="submit" value="Изменить">Изменить</button>
+            </a>
         </div>
 
 

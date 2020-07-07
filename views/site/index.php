@@ -21,9 +21,9 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
         <div id="slides">
             <div id="overflow">
                 <div class="image">
-                    <article><img src="img/Zowie-скидка.jpg"></article>
-                    <article><img src="img/MAD-CATZ-анонс-продаж-Сайт_ydt1-bz.jpg"></article>
-                    <article><img src=""></article>
+                    <article><img src="/img/Zowie-скидка.jpg"></article>
+                    <article><img src="/img/MAD-CATZ-анонс-продаж-Сайт_ydt1-bz.jpg"></article>
+                    <article><img src="/img/HyperX-Cloud.jpg"></article>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                                 <!-- /.card-heading -->
                                 <div class="card-buttons">
                                     <button class="button-to-basket">
-                                        <span class="button-card-text">В корзину</span>
+                                        <span>В корзину</span>
                                         <img src="/img/basket-2.svg" alt="" class="button-card-img">
                                     </button>
                                     <strong class="card-price-bold"><?= $product['price'] ?>₽</strong>
@@ -89,9 +89,9 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                                 </div>
                                 <!-- /.card-heading -->
                                 <div class="card-buttons">
-                                    <button class="button-to-category">
-                                        <a href="/category/<?= $category['link'] ?>/" class="button-card-text">Перейти</a>
-                                    </button>
+                                    <a href="/category/<?= $category['link'] ?>/" class="button-card-text">
+                                        <button class="button-to-category">Перейти</button>
+                                    </a>
                                 </div>
                             </div>
                             <!-- /.card-text -->
@@ -129,4 +129,9 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
         </div>
     </div>
 </div>
+
+
+
+
+
 </div>

@@ -116,14 +116,16 @@ new Element("breadcrumb", ["elements" => [
 
     <div class="poduct-list">
         <?php if (empty($products)) : ?>
-        <p>Продуктов в этой категории ещё нет :с</p>
+            <div class="error-view">
+        <p class="category-error">Продуктов в данной категории нет</p>
+        </div>
         <?php else : ?>
             <ul class="product-page-ul">
                 <?php foreach ($products as $product) : ?>
-                <li class="product-page-li">
+                <!-- <li class="product-page-li">
                     <img class="product-img" src="/uploads/<?= $product['image'] ?>">
                     <p class="product-name"><?= $product['name'] ?></p>
-                </li>
+                </li> -->
                 <li class="product-page-li">
                     <!-- /.card -->
                     <div class="card product-page-card">
@@ -134,10 +136,12 @@ new Element("breadcrumb", ["elements" => [
                             </div>
                             <!-- /.card-heading -->
                             <div class="card-buttons">
+                                <a href="/products/" class="links">
                                 <button class="button-to-basket">
                                     <span class="button-card-text">В корзину</span>
                                     <img src="/img/basket-2.svg" class="button-card-img">
                                 </button>
+                                </a>
                                 <strong class="card-price-bold">0 000₽</strong>
                             </div>
                         </div>

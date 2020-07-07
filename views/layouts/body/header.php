@@ -15,7 +15,7 @@ $categories = $categoriesComponent->getAll();
         <div class="content-top">
             <div class="form-search-top">
                 <form action="" method="get">
-                    <button type="submit"><img class="search" src="img/search_w.png"></button>
+                    <button type="submit"><img class="search" src="/img/search_grey.png"></button>
                     <input name="s" placeholder="Поиск..." type="search">
                 </form>
             </div>
@@ -48,8 +48,13 @@ $categories = $categoriesComponent->getAll();
                     </li>
                 </ul>
             </div>
-            <button class="button-basket" type="submit"><img class="basket" src="img/basket.png"></button>
-            <button id="person-button" class="button-person" type="submit"><img class="person" src="img/person.png"></button>
+            <a href="/basket/">
+                <button class="button-basket" type="submit"><img class="basket" src="/img/basket.png"></button>
+            </a>
+            <a>
+                <button id="person-button" class="button-person" type="submit"><img class="person" src="/img/person.png"></button>
+            </a>
+           
         </div>
     </div>
 </div>

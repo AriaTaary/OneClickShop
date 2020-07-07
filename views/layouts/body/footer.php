@@ -5,7 +5,9 @@
                 <div class="phone">
                     <img class="phone-img" src="/img/phone.png">
                     <p>+7 777 000 00 00</p>
-                    <button class="button-call" type="submit"><img class="call">Позвонить</button>
+                    <a href="tel:+7 777 777 00 00">
+                        <button class="button-call" type="submit"><img class="call">Позвонить</button>
+                    </a>
                 </div>
                 <div class="mail">
                     <img class="mail-img" src="/img/mail.png">
@@ -29,7 +31,7 @@
 
     <div class="form-search-bottom">
         <form action="" method="get">
-            <button type="submit"><img class="search" src="/img/search_w.png"></button>
+            <button type="submit"><img class="search" src="/img/search_grey.png"></button>
             <input name="s" placeholder="Поиск..." type="search">
         </form>
     </div>

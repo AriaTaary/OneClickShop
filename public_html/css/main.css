@@ -28,7 +28,7 @@ body {
 }
 
 .content{
-    min-height: calc(100vh - 298px);
+    min-height: calc(100vh - 399px);
     /* flex: 1 0 auto; */
 }
 
@@ -173,8 +173,16 @@ body {
     width: 98px;
     height: 35px;
     align-self: center;
-    margin-left: 20px;
+    margin-left: 23px;
     outline: none;
+    cursor: pointer;
+    color: black;
+}
+
+.button-call:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
 }
 
 .button-basket{
@@ -186,6 +194,7 @@ body {
     width: 50px;
     margin-right: 10px;
     outline: none;
+    cursor: pointer;
 }
 
 .button-person{
@@ -377,7 +386,7 @@ label, a{ /*при наведении на стрелки или переклю�
 .product-page-ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding: 10px 0 10px 0;
     margin: 0 22px;
@@ -401,9 +410,18 @@ label, a{ /*при наведении на стрелки или переклю�
     display: flex;
     flex-direction: column;
     padding: 30px 0px;
+    /* margin-: 40px; */
 
 }
 
+.product-page-li:not(:nth-child(4n)){
+    margin-right: 4.35vw;
+  
+}
+
+/* .product-page-card:nth-child(3n){
+    margin-right: 3vw;
+} */
 
 .product-img{
     padding-top: 20px;
@@ -425,13 +443,14 @@ label, a{ /*при наведении на стрелки или переклю�
 .layer {
    overflow: scroll; /* Добавляем полосу прокрутки */
    width: calc (100vw - 20px); /* Ширина блока */
-   height: 30vw; /* Высота блока */
+   /* height: 30vw; Высота блока */
    padding: 5px; /* Поля вокруг текста */
    margin-left: 0px;
    margin-top: 20px;
    /* border: solid 1px black; Параметры рамки */
    white-space: nowrap; /* Запрещаем перенос строк */
    margin-left: 20px;
+   padding-bottom: 20px;
 } 
 
 .sponsors{
@@ -767,8 +786,7 @@ select{
 
 .menu-li-dropdown {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     /* align-items: center; */
     list-style: none;
     height: 45px;
@@ -786,9 +804,10 @@ select{
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
+    flex-direction: column;
     position: absolute;
     top: 99px;
-    right: 401px;
+    right: 413px;
     background-color:  #191919;
     min-width: 130px;
     /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
@@ -812,7 +831,7 @@ select{
 .dropdown-content a:hover {background-color: rgba(100, 100, 100, 0.2);}
 
 /* Show the dropdown menu on hover */
-.menu-li-dropdown:hover .dropdown-content {display: block;}
+.menu-li-dropdown:hover .dropdown-content {display: flex;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .menu-li-dropdown:hover .dropbtn {color: #FF5A00;}
@@ -1007,15 +1026,20 @@ select{
     border-radius: 3px;
     font-size: 14pt;
     margin: 10px 0 10px 0;
-    width: 203px;
+    width: 165px;
     outline: none;
     padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .button-to-basket:hover{
-    background-color: white;
+    /* background-color: white;
     color:#ee652b;
-    border: 2px solid #ee652b;
+    border: 2px solid #ee652b; */
+    background-color: black;
+    color: white;
+    border: 2px solid black;
 }
 
 .not-favorite{
@@ -1361,7 +1385,7 @@ h2{
 
 .login-form form{
     justify-content: flex-start;
-    width: 400px;
+    width: 100%;
     height: 35px;
     border: none;
     outline: none;
@@ -1409,12 +1433,43 @@ h2{
     overflow: hidden;
     text-decoration: none;
     width: 300px;
-    margin-right: 40px;
+    margin-right: 20px;
+}
+
+.product-li{
+    margin-left: 20px;
+}
+
+.product-li:first-child{
+    margin-left: 0px;
 }
 
 .product-page-card{
-    margin-right: 0;
+    margin-right: 0px;
 }
+
+/* .product-page-card{
+    margin-right: 40px;
+    margin-left: 0;
+}
+
+.product-page-card:last-child{
+    margin-left: 30px;
+} */
+
+
+/* .card:not(:nth-child(4n)){
+    margin-right: 3vw;
+} */
+
+/* .product-page-card:nth-child(3n){
+    margin-right: 3vw;
+} */
+
+
+/* .product-page-card:last-child{
+    margin-right: 0;
+} */
 
 .card-img{
     display: flex;
@@ -1471,7 +1526,7 @@ h2{
 }
 
 .button-card-img{
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .button-to-category{
@@ -1489,11 +1544,14 @@ h2{
     /* max-width: 200px; */
     outline: none;
     padding: 8px 16px;
+    cursor: pointer;
+
 }
 
 .button-to-category:hover{
-    background-color: white;
-    color: black;
+    background-color: #ee652b;
+    color: white;
+    border: 2px solid #ee652b;
 }
 
 .account-view{
@@ -1665,4 +1723,33 @@ h2{
     outline: none;
     width: 150px;
     cursor: pointer;
+}
+
+.button-card-text{
+    text-decoration: none;
+}
+
+.links{
+    text-decoration: none;
+}
+
+.category-error{
+    color: #969696;
+}
+
+.error-view{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 20px;
+}
+
+.link-active{
+    color:  #ee652b;
+}
+
+.change-info-form{
+    display: flex;
+    flex-direction: column;
 }
