@@ -64,7 +64,7 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                                             <img src="/img/basket-2.svg" alt="" class="button-card-img">
                                             </div>
                                         </button>
-                                        <strong class="card-price-bold"><?= $product['price'] ?>₽</strong>
+                                        <strong class="card-price-bold"><?= $product['price'] ?> руб. </strong>
                                     </div>
                                 </div>
                                 <!-- /.card-text -->
