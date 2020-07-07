@@ -1,0 +1,109 @@
+@media all and (max-width: 800px) {
+    .menu-desktop-li{
+        display: none;
+    }
+    .menu-mobile{
+        display: flex;
+    }
+}
+
+
+/* @media all and (max-width: 1080px) {
+    .info-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .info-column {
+        border: none;
+        padding: 0px;
+    }
+}
+
+@media screen and (min-width: 1030px) {
+    .signature p {
+        font-size: 20px;
+    }
+    .products-img-1{
+        min-height: 280px;
+    }
+}
+@media screen and (max-width: 1029px) and (min-width: 485px) {
+    .signature p {
+        font-size: 20px;
+    }
+    .products-img-1{
+        min-height: 280px;
+    }
+    .header{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .products-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .menu-ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+} 
+
+@media screen and (max-width: 484px) and (min-width: 464px) {
+    .signature p {
+        font-size: 4.1vw;
+    }
+    .products-img-1{
+        min-height: 280px;
+    }
+    .header{
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 463px) and (min-width: 444px) {
+    .signature p {
+        font-size: 4vw;
+    }
+    .products-img-1{
+        min-height: 270px;
+    }
+    .header{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 443px) and (min-width: 424px) {
+    .signature p {
+        font-size: 3.9vw;
+    }
+    .products-img-1{
+        min-height: 250px;
+    }
+    .header{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 423px) and (min-width: 400px) {
+    .signature p {
+        font-size: 3.8vw;
+    }
+    .products-img-1{
+        min-height: 230px;
+    }
+    .header{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+} */
