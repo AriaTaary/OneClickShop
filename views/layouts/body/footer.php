@@ -5,6 +5,7 @@
                 <div class="phone">
                     <img class="phone-img" src="/img/phone.png">
                     <p>+7 777 000 00 00</p>
+                    <button class="button-call" type="submit"><img class="call">Позвонить</button>
                 </div>
                 <div class="mail">
                     <img class="mail-img" src="/img/mail.png">
