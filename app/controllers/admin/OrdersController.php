@@ -64,7 +64,7 @@ class OrdersController extends AdminController
     {
         $post = $this->page->getPost();
 
-        var_dump($post);
+        // var_dump($post);
 
         $id = $post['id'];
         $name = $post['name'];
