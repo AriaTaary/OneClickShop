@@ -5,6 +5,7 @@ namespace app\components;
 
 
 use app\database\UsersTable;
+use app\database\UserStatusTable;
 use app\model\User;
 use base\App;
 use base\component\Component;
@@ -46,7 +47,7 @@ class AuthComponent extends Component
      *
      * @return bool
      */
-    public function auth($email, $password, $remember)
+    public function auth($email, $password, $remember = null)
     {
         $user = $this->getUser("email", $email);
 
@@ -78,16 +79,20 @@ class AuthComponent extends Component
      *
      *  Для добавления пользователя в базу данных создаётся объект класса User.
      *
+     * @param $name
      * @param $email
      * @param $password
      * @return int
      */
-    public function register($email, $password)
+    public function register($name, $email, $password)
     {
         $salt = $this->generateSalt();
         $hashPassword = $this->generateHashPassword($password, $salt);
 
-        $user = new User($email, $hashPassword, $salt);
+        $userStatusTable = new UserStatusTable();
+        $status = $userStatusTable->get("*", ['name' => "user"])[0];
+
+        $user = new User($name, $email, $hashPassword, $salt, $status['id']);
 
         return $this->usersTable->insert($user);
     }
@@ -110,6 +115,7 @@ class AuthComponent extends Component
 
             App::$session->user->setId(null);
             App::$session->user->setEmail(null);
+            App::$session->user->setRole(null);
 
             return true;
         }
@@ -155,9 +161,13 @@ class AuthComponent extends Component
     {
         $user = $this->getUser("auth_token", $auth_token);
 
+        $statusTable = new UserStatusTable();
+        $status = $statusTable->get("*", ['id' => $user['status_id']])[0];
+
         App::$session->user->auth = true;
         App::$session->user->setId($user['id']);
         App::$session->user->setEmail($user['email']);
+        App::$session->user->setRole($status['name']);
 
         return true;
     }

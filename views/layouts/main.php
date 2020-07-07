@@ -55,54 +55,46 @@ $path = new base\routing\Path();
             <div class="modal-body">
 
                 <div id="blocklogin" class="block-log-in block-open">
-                    <div class="login-form">
-                        <p class="login-name">Email:</p>
-                        <form action="" method="get">
-                            <input name="s" placeholder="Введите email" type="search">
-                        </form>
-                    </div>
-                    <div class="login-form">
-                        <p class="login-name">Пароль:</p>
-                        <form action="" method="get">
-                            <input name="s" placeholder="Введите пароль" type="search">
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="footer-buttons">
-                            <button class="login-button">Войти</button>
+                    <form action="/auth/" method="post">
+                        <div class="login-form">
+                            <p class="login-name">Email:</p>
+                            <input name="email" placeholder="Введите email" type="email">
                         </div>
-                    </div>
+                        <div class="login-form">
+                            <p class="login-name">Пароль:</p>
+                            <input name="password" placeholder="Введите пароль" type="password">
+                        </div>
+                        <div class="modal-footer">
+                            <div class="footer-buttons">
+                                <button class="login-button">Войти</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div id="blockregin" class="block-reg-in">
-                    <div class="login-form">
-                        <p class="login-name">Имя:</p>
-                        <form action="" method="get">
-                            <input name="s" placeholder="Введите имя" type="search">
-                        </form>
-                    </div>
-                    <div class="login-form">
-                        <p class="login-name">Email:</p>
-                        <form action="" method="get">
-                            <input name="s" placeholder="Введите email" type="search">
-                        </form>
-                    </div>
-                    <div class="login-form">
-                        <p class="login-name">Пароль:</p>
-                        <form action="" method="get">
-                            <input name="s" placeholder="Введите пароль" type="search">
-                        </form>
-                    </div>
-                    <div class="login-form">
-                        <p class="login-name">Повторите пароль:</p>
-                        <form action="" method="get">
-                            <input name="s" placeholder="Введите пароль" type="search">
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="footer-buttons">
-                            <button class="login-button">Зарегестрироваться</button>
+                    <form action="/register/" method="post">
+                        <div class="login-form">
+                            <p class="login-name">Имя:</p>
+                            <input name="name" placeholder="Введите имя" type="text">
                         </div>
-                    </div>
+                        <div class="login-form">
+                            <p class="login-name">Email:</p>
+                            <input name="email" placeholder="Введите email" type="email">
+                        </div>
+                        <div class="login-form">
+                            <p class="login-name">Пароль:</p>
+                            <input name="password" placeholder="Введите пароль" type="password">
+                        </div>
+                        <div class="login-form">
+                            <p class="login-name">Повторите пароль:</p>
+                            <input name="password_confirm" placeholder="Введите пароль" type="password">
+                        </div>
+                        <div class="modal-footer">
+                            <div class="footer-buttons">
+                                <button class="login-button">Зарегестрироваться</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>  
                 
             </div>

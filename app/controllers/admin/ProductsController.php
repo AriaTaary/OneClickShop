@@ -71,7 +71,7 @@ class ProductsController extends AdminController
         $add = $this->component->add($category_id, $brand_id, $article, $name, $description, $price, $images);
 
         if ($add === true) {
-            header("Location: /admin/products/");
+            header("Location: /profile/admin/products/");
         }
         else {
             $categoriesComponent = new CategoriesComponent();
@@ -107,7 +107,7 @@ class ProductsController extends AdminController
         $edit = $this->component->edit($id, $category_id, $brand_id, $article, $name, $description, $price, $images);
 
         if ($edit === true) {
-            header("Location: /admin/products/");
+            header("Location: /profile/admin/products/");
         }
         else {
             $categoriesComponent = new CategoriesComponent();
@@ -128,7 +128,7 @@ class ProductsController extends AdminController
         $delete = $this->component->delete($id);
 
         if ($delete === true) {
-            header("Location: /admin/products/");
+            header("Location: /profile/admin/products/");
         }
         else {
             new View("errors/delete", $this->page);

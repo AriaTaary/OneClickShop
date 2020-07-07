@@ -85,7 +85,7 @@ class CategoriesController extends AdminController
         $edit = $this->component->edit($id, $name, $link, $image);
 
         if ($edit === true) {
-            header("Location: /admin/categories/");
+            header("Location: /profile/admin/categories/");
         }
         else {
             new View("site/categories/form", $this->page, ['data' => $post, 'error' => $edit, 'edit' => true]);
@@ -100,7 +100,7 @@ class CategoriesController extends AdminController
         $delete = $this->component->delete($id);
 
         if ($delete) {
-            header("Location: /admin/categories/");
+            header("Location: /profile/admin/categories/");
         }
         else {
             new View("errors/delete", $this->page);

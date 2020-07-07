@@ -15,7 +15,7 @@ $categories = $categoriesComponent->getAll();
         <div class="content-top">
             <div class="form-search-top">
                 <form action="" method="get">
-                    <button type="submit"><img class="search" src="/img/search_grey.png"></button>
+                    <button type="submit"><img class="search" src="/img/search_w.png"></button>
                     <input name="s" placeholder="Поиск..." type="search">
                 </form>
             </div>
@@ -48,13 +48,14 @@ $categories = $categoriesComponent->getAll();
                     </li>
                 </ul>
             </div>
-            <a href="/basket/">
-                <button class="button-basket" type="submit"><img class="basket" src="/img/basket.png"></button>
-            </a>
-            <a>
-                <button id="person-button" class="button-person" type="submit"><img class="person" src="/img/person.png"></button>
-            </a>
-           
+            <button class="button-basket" type="submit"><img class="basket" src="/img/basket.png"></button>
+            <?php if (\base\App::$session->user->isAuth()) : ?>
+                <a href="/profile/">
+                    <button class="button-person"><img class="person" src="/img/person.png"></button>
+                </a>
+            <?php else : ?>
+            <button id="person-button" class="button-person" type="submit"><img class="person" src="/img/person.png"></button>
+            <?php endif; ?>
         </div>
     </div>
 </div>

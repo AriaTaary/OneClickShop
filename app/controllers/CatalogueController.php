@@ -7,6 +7,8 @@ namespace app\controllers;
 use app\base\BaseController;
 use app\components\CategoriesComponent;
 use app\components\ProductsComponent;
+use app\database\BrandsTable;
+use app\database\ImagesTable;
 use base\Page;
 use base\View\View;
 
@@ -39,7 +41,14 @@ class CatalogueController extends BaseController
         $article = $this->params['article'];
         $product = $this->component->getByArticle($article);
 
-        new View("site/product", $this->page, ['product' => $product]);
+        $brandsTable = new BrandsTable();
+        $brands = $brandsTable->get("*", ['id' => $product['brand_id']]);
+        $product['brand'] = $brands[0]['name'];
+
+        $imagesTable = new ImagesTable();
+        $images = $imagesTable->get("*", ['product_id' => $product['id']]);
+
+        new View("site/product", $this->page, ['product' => $product, 'images' => $images]);
     }
 
     private function setComponent()

@@ -4,6 +4,7 @@
 use app\controllers\admin\BrandsController;
 use app\controllers\admin\CategoriesController;
 use app\controllers\admin\ProductsController;
+use app\controllers\AuthController;
 use app\controllers\CatalogueController;
 use app\controllers\OrderController;
 use app\controllers\ProfileController;
@@ -25,11 +26,16 @@ $routing->add('GET', '/products/{article}/', CatalogueController::class, 'item')
 $routing->add("GET", "/basket/", OrderController::class, "basket");
 $routing->add("GET", "/order/", OrderController::class, "order");
 
+/** Авторизация */
+$routing->add("POST", "/auth/", AuthController::class, "auth");
+$routing->add("POST", "/register/", AuthController::class, "register");
+
 /** Личный кабинет */
-$routing->add("GET", "/profile/", ProfileController::class, "index");
-$routing->add("GET", "/profile/orders/", ProfileController::class, "orders");
+$routing->add("GET", "/profile/", ProfileController::class, "orders");
 $routing->add("GET", "/profile/favourites/", ProfileController::class, "favourites");
 $routing->add("GET", "/profile/settings/", ProfileController::class, "settings");
+$routing->add("GET", "/profile/edit/", ProfileController::class, "form");
+$routing->add("POST", "/profile/edit/", ProfileController::class, "edit");
 
 /** Админка */
 $routing->add('GET', '/profile/admin/categories/', CategoriesController::class, 'all');

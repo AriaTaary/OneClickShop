@@ -9,11 +9,6 @@ use base\View\View;
 
 class ProfileController extends BaseController
 {
-    public function index()
-    {
-        new View("site/profile/profile", $this->page);
-    }
-
     public function orders()
     {
         new View("site/profile/orders", $this->page);
@@ -27,5 +22,15 @@ class ProfileController extends BaseController
     public function settings()
     {
         new View("site/profile/settings", $this->page);
+    }
+
+    public function form()
+    {
+        new View("site/profile/form", $this->page);
+    }
+
+    public function edit()
+    {
+
     }
 }
