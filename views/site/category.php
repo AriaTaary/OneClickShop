@@ -124,6 +124,27 @@ new Element("breadcrumb", ["elements" => [
                     <img class="product-img" src="/uploads/<?= $product['image'] ?>">
                     <p class="product-name"><?= $product['name'] ?></p>
                 </li>
+                <li class="product-page-li">
+                    <!-- /.card -->
+                    <div class="card product-page-card">
+                        <img src="/uploads/<?= $product['image'] ?>" class="card-img">
+                        <div class="card-text">
+                            <div class="card-heading">
+                                <h3 class="card-title card-title-reg"><?= $product['name'] ?></h3>
+                            </div>
+                            <!-- /.card-heading -->
+                            <div class="card-buttons">
+                                <button class="button-to-basket">
+                                    <span class="button-card-text">В корзину</span>
+                                    <img src="/img/basket-2.svg" class="button-card-img">
+                                </button>
+                                <strong class="card-price-bold">0 000₽</strong>
+                            </div>
+                        </div>
+                        <!-- /.card-text -->
+                    </div>
+                    <!-- /.card -->
+                </li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>

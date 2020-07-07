@@ -47,8 +47,25 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
             <ul class="product-ul">
                 <?php foreach ($products as $product) : ?>
                     <li class="product-li">
-                        <img class="product-img" src="/uploads/<?= $product['image'] ?>">
-                        <p class="product-name"><?= $product['name'] ?></p>
+                        <!-- /.card -->
+                        <div class="card">
+                            <img src="/uploads/<?= $product['image'] ?>" alt="" class="card-img">
+                            <div class="card-text">
+                                <div class="card-heading">
+                                    <h3 class="card-title card-title-reg"><?= $product['name'] ?></h3>
+                                </div>
+                                <!-- /.card-heading -->
+                                <div class="card-buttons">
+                                    <button class="button-to-basket">
+                                        <span class="button-card-text">В корзину</span>
+                                        <img src="/img/basket-2.svg" alt="" class="button-card-img">
+                                    </button>
+                                    <strong class="card-price-bold"><?= $product['price'] ?>₽</strong>
+                                </div>
+                            </div>
+                            <!-- /.card-text -->
+                        </div>
+                        <!-- /.card -->
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -63,10 +80,23 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
             <ul class="product-ul">
                 <?php foreach ($categories as $category) : ?>
                     <li class="product-li">
-                        <img class="product-img" src="/uploads/<?= $category['image'] ?>">
-                        <p class="product-name">
-                            <a href="/category/<?= $category['link'] ?>/"><?= $category['name'] ?></a>
-                        </p>
+                        <!-- /.card -->
+                        <div class="card">
+                            <img src="/uploads/<?= $category['image'] ?>" alt="" class="card-img">
+                            <div class="card-text">
+                                <div class="card-heading">
+                                    <h3 class="card-title card-title-reg"><?= $category['name'] ?></h3>
+                                </div>
+                                <!-- /.card-heading -->
+                                <div class="card-buttons">
+                                    <button class="button-to-category">
+                                        <a href="/category/<?= $category['link'] ?>/" class="button-card-text">Перейти</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.card-text -->
+                        </div>
+                        <!-- /.card -->
                     </li>
                 <?php endforeach; ?>
             </ul>
@@ -80,19 +110,19 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
         <div class="poduct-list">
             <ul class="product-ul">
                 <li class="product-li">
-                    <img class="sponsor-img" src="img/hyperx.png">
+                    <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
                 <li class="product-li">
-                    <img class="sponsor-img" src="img/hyperx.png">
+                    <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
                 <li class="product-li">
-                    <img class="sponsor-img" src="img/hyperx.png">
+                    <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
                 <li class="product-li">
-                    <img class="sponsor-img" src="img/hyperx.png">
+                    <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
             </ul>
