@@ -14,10 +14,11 @@ $page->title = "Поиск - OneClick";
 <div class="new-content">
     <div class="poduct-list">
         <?php if (empty($products)) : ?>
-            <div class="error-view">
-                <p class="category-error">По вашему запросу ничего не найдено</p>
+            <div class="message-view">
+                <p class="message">По вашему запросу ничего не найдено</p>
             </div>
         <?php else : ?>
+            <p class="header-text">По вашему запросу найдено:</p>
             <ul class="product-page-ul">
                 <?php foreach ($products as $product) : ?>
                     <li class="product-page-li">

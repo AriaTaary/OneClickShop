@@ -38,7 +38,7 @@
     </div>
 
     <div class="form-search-bottom">
-        <form action="" method="get">
+        <form class="form-search-bottom" action="" method="get">
             <button type="submit"><img class="search" src="/img/search_grey.png"></button>
             <input name="s" placeholder="Поиск..." type="search">
         </form>

@@ -33,7 +33,7 @@ new Element("breadcrumb", ["elements" => [
                         <p>Сортировать</p>
                         <img class="sort-img" src="/img/sort.png">
                     </label>
-                    <select name="sort" id="select-1" onchange="submitForm('sort')">
+                    <select class="admin-form-input-sort" name="sort" id="select-1" onchange="submitForm('sort')">
                         <option value="default">По умолчанию</option>
                         <option value="name" <?php if (!is_null($sort) && $sort == "name") :?>selected<?php endif; ?>>По наименованию (А -> Я)</option>
                         <option value="nameRevert" <?php if (!is_null($sort) && $sort == "nameRevert") :?>selected<?php endif; ?>>По наименованию (Я -> А)</option>
@@ -106,8 +106,8 @@ new Element("breadcrumb", ["elements" => [
 
     <div class="poduct-list">
         <?php if (empty($products)) : ?>
-            <div class="error-view">
-                <p class="category-error">Товаров в данной категории нет</p>
+            <div class="message-view">
+                <p class="message">Товаров в данной категории нет</p>
             </div>
         <?php else : ?>
             <ul class="product-page-ul">

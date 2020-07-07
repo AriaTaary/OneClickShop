@@ -9,6 +9,8 @@
         
 <div class="main-content">
 
+    <p class="basket-header-text">Количество товаров в корзине:</p>
+
     <?php foreach ($products as $product) : ?>
     <div class="position">
         <img class="basket-product-img" src="/uploads/<?= $product['image'] ?>" alt="<?= $product['name'] ?>">

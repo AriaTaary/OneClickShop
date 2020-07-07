@@ -74,7 +74,6 @@ body {
     justify-content: flex-end;
     margin-top: 10px;
     margin-bottom: 10px;
-
 }
 
 .content-bottom{
@@ -379,6 +378,11 @@ label, a{ /*при наведении на стрелки или переклю�
     line-height: 40px;
 }
 
+.basket-header-text{
+    font-size: 12pt;
+    margin-bottom: 30px;
+}
+
 .product-list{
     display: flex;
 }
@@ -594,20 +598,25 @@ form button {
 form {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     width: 304px;
     height: 35px;
-    align-self: center;
+    /* align-self: center;
     text-align: center;
     align-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .form-search-top{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-content: flex-end;
     /* margin-right: 45px; */
     height: 35px;
+}
+
+.form-search-top input{
+    width: 100%;
 }
 
 .form-search-bottom{
@@ -618,17 +627,19 @@ form {
 }
 
 form input {
-  width: 100%;
+  /* min-width: 100%; */
   height: 35px;
-  padding-left: 10px;
-  padding-right: 10px;
   border: none;
+  padding: 10px;
   border-radius: 0px 3px 3px 0px;
   outline: none;
   background-color: rgba(100, 100, 100, 0.2);
   color: #9E9C9C;
   font-size: 10pt;
   -webkit-appearance: textfield;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 form button {
@@ -1433,7 +1444,7 @@ h2{
 .modal-body{
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .close, .close-name, .close-surname, .close-email, .close-phone, .close-adress, .close-password, .close-status, .close-add, .close-change{
@@ -1446,8 +1457,10 @@ h2{
 }
 
 .modal-footer{
+    width: 100%;
     display: flex;
     justify-content: flex-start;
+ 
     margin-top: 20px;
 }
 
@@ -1526,10 +1539,10 @@ h2{
     color: black;
 }
 
-.modal-footer{
+/* .modal-footer{
     width: 100%;
     justify-content: center;
-}
+} */
 
 .login-button{
     background-color:#ee652b;
@@ -1540,6 +1553,13 @@ h2{
     border-radius: 3px;
     font-size: 14pt;
     outline: none;
+    cursor: pointer;
+}
+
+.login-button:hover{
+    background-color: black;
+    color: white;
+    border: none;
 }
 
 .enter{
@@ -1549,6 +1569,135 @@ h2{
 .registration{
     width: 210px;
 }
+
+.add{
+    width: 100px;
+    font-size: 12pt;
+    height: 25px;
+    margin: 10px 0px 30px 0px;
+    display: flex;
+    align-content: flex-start;
+}
+
+.label-admin-form{
+    display: flex;
+    align-items: flex-start;
+}
+
+.admin-menu-action{
+    cursor: pointer;
+    color: black;
+    border: none;
+    background-color: transparent;
+    font-size: 12pt;
+    width: 100%;
+
+}
+
+.admin-menu-action:hover{
+    color: #ee652b;
+}
+
+.admin-form-input{
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px 0px;
+    border-radius: 3px;
+    color: black !important;
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    -webkit-appearance: textfield;
+}
+
+textarea{
+    padding: 0px;
+    outline-style: none;
+    border-radius: 3px;
+    margin: 10px 0px;
+}
+
+select{
+    outline-style: none;
+    cursor: pointer;
+}
+
+
+
+.admin-form-input-sort{
+    border: 1px solid #969696;
+    color: #969696;
+    background-color: transparent;
+}
+
+input[type=file]{
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+
+/* input[type=file]{
+    outline: none;
+    cursor: pointer;
+    padding-top: 15px;
+
+}
+
+.label-column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.label-img{
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+.add-img{
+    margin: 30px 0px 30px 0px;
+    width:304px;
+}
+
+.form-group input[type=file]{
+    outline:0;
+    opacity:0;
+    pointer-events:none;
+    user-select:none;
+}
+.form-group  .label{
+    width:100%;
+    border:1px dashed black;
+    border-radius:5px;
+    display:block;
+    padding:10px;
+    transition:border 300ms ease;
+    cursor:pointer;
+    text-align:center;
+    height: 55px;
+}
+.form-group .label i{
+    display:block;
+    font-size:10pt;
+    padding-bottom:16px;
+
+}
+.form-group  .label i,.form-group  .label .title{
+    color:black;
+    transition:200ms color;
+    font-size:10pt;
+}
+.form-group  .label:hover{
+    border:1px solid black;
+}
+.form-group  .label:hover i,.form-group  .label:hover .title{
+    color:black;
+} */
+
 
 
 
@@ -1872,11 +2021,15 @@ h2{
     text-decoration: none;
 }
 
-.category-error{
+.message{
+    display: flex;
+    justify-content: center;
     color: #969696;
+    margin-bottom: 20px;
+
 }
 
-.error-view{
+.message-view{
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -1969,4 +2122,14 @@ h2{
     border: 1px solid black;
     color: black;
     width: 100%;
+}
+
+.menu-exit{
+    margin-top: 30px;
+}
+
+.profile-category{
+    margin: 30px 0px 20px 0px;
+    color: #ee652b;
+
 }

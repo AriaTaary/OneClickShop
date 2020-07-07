@@ -34,7 +34,7 @@ new Element("breadcrumb", ["elements" => [
             <p class="black-text">понедельник - пятница</p>
             <p class="black-text">с 10:00 до 19:00</p>
         </div>
-        <div class="map">
+        <div class="contact-map">
             <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8b21c7e1677f7f4fec29ffaed5267033fe6724580b9b12abee6e023ec6b655e9&amp;width=800&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </div>

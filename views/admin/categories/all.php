@@ -15,8 +15,8 @@
     <div class="account-content">
         <p class="header-text">Категории</p>
         <div class="orders">
-            <div style="margin: 10px;">
-                <a href="/profile/admin/categories/add/">Добавить</a>
+            <div>
+                <a href="/profile/admin/categories/add/"><button class="login-button add">Добавить</button></a>
             </div>
 
             <div>
@@ -29,12 +29,13 @@
                                 <td style="border: 1px solid black; padding: 10px;"><?= $item['link'] ?></td>
                                 <td style="border: 1px solid black; padding: 10px;"><?= $item['image'] ?></td>
                                 <td style="border: 1px solid black; padding: 10px;">
-                                    <a style="text-decoration: none; color: black" href="/profile/admin/categories/edit/<?= $item['id'] ?>">Редактировать</a>
+                                    <a style="text-decoration: none; color: black" href="/profile/admin/categories/edit/<?= $item['id'] ?>"><button class="admin-menu-action">Редактировать</button></a>
                                 </td>
                                 <td style="border: 1px solid black; padding: 10px;">
                                     <form action="/profile/admin/categories/delete/" style="width: 100%" method="post">
                                         <input type="number" name="id" value="<?= $item['id'] ?>" style="display: none">
-                                        <button type="submit" style="background: none; font-size: 12pt; width: 100%">Удалить</button>
+                                        <button type="submit"  class="admin-menu-action">Удалить</button>
+                                        <!-- <button type="submit" style="background: none; font-size: 12pt; width: 100%">Удалить</button> -->
                                     </form>
                                 </td>
                             </tr>

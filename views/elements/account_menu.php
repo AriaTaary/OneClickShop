@@ -9,7 +9,7 @@
         <a href="/profile/settings/" class="account-menu-a menu-a">Настройки аккаунта</a>
     </li>
     <?php if (\base\App::$session->user->getRole() == "moderator" || \base\App::$session->user->getRole() == "administrator") : ?>
-        <p style="margin-top: 25px">Администрирование:</p>
+        <p class="profile-category">Администрирование:</p>
         <li class="account-menu-li ">
             <a href="/profile/admin/categories/" class="account-menu-a menu-a">Категории</a>
         </li>
@@ -20,4 +20,7 @@
             <a href="/profile/admin/products/" class="account-menu-a menu-a">Товары</a>
         </li>
     <?php endif; ?>
+    <li class="account-menu-li ">
+        <a href="" class="account-menu-a menu-a menu-exit"><button class="login-button enter">Выйти</button></a>
+    </li>
 </ul>
