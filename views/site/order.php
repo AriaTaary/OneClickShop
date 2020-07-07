@@ -6,7 +6,7 @@
 
         <div class="forms">
 
-            <form  class="order-form" action="/auth/" method="post">  
+            <form  class="order-form" action="/order/" method="post">
                 <div class="form-order-info">
                     <p class="login-name"> Имя:</p>
                     <input id="name" placeholder="Введите имя" name="name" type="text">

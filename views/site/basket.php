@@ -32,11 +32,13 @@
             </div>
 
             <div class="order-buttons">
+                <?php if ($sum !== 0) : ?>
                 <div class="order-button">
                     <a href="/order/">
                         <button class="button-to-pay" type="submit">Оформить заказ</button>
                     </a>
                 </div>
+                <?php endif; ?>
                 <div class="order-button">
                     <a href="/">
                         <button class="button-to-go"type="submit">Продолжить покупки</button>

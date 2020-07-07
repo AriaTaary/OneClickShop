@@ -123,6 +123,21 @@ class ProductsComponent extends BaseComponent
         }
     }
 
+    public function getByFilter($brands, $min, $max, $category_id)
+    {
+        $this->setTable();
+
+        $products = $this->table->filter($brands, $min, $max, $category_id);
+
+        if (!empty($products)) {
+            $products = $this->setImages($products);
+            return $products;
+        }
+        else {
+            return null;
+        }
+    }
+
     public function getByArticle($article)
     {
         $this->setTable();

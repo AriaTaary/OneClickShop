@@ -4,6 +4,7 @@
  * @var $page base\Page
  * @var $category array
  * @var $products array
+ * @var $brands array
  * @var $sort
  */
 
@@ -56,22 +57,12 @@ new Element("breadcrumb", ["elements" => [
                         <li>
                             <div class="brand">
                                 <p class="brand-title">Бренд:</p>
-                                <div class="filter-choice">
-                                    <input class="filter-input" type="checkbox" value="1" id="ch-1">
-                                    <label for="ch-1">Бренд 1</label>
-                                </div>
-                                <div class="filter-choice">
-                                    <input class="filter-input"type="checkbox" value="2" id="ch-2">
-                                    <label for="ch-2">Бренд 2</label>
-                                </div>
-                                <div class="filter-choice">
-                                    <input class="filter-input" type="checkbox" value="3" id="ch-3">
-                                    <label for="ch-3">Бренд 3</label>
-                                </div>
-                                <div class="filter-choice">
-                                    <input class="filter-input" type="checkbox" value="4" id="ch-4">
-                                    <label for="ch-4">Бренд 4</label>
-                                </div>
+                                <?php foreach ($brands as $key => $brand) : ?>
+                                    <div class="filter-choice">
+                                        <input class="filter-input" type="checkbox" name="brands[]" value="<?= $brand['id'] ?>" id="ch-<?= $key + 1 ?>">
+                                        <label for="ch-1"><?= $brand['name'] ?></label>
+                                    </div>
+                                <?php endforeach; ?>
                             </div>
                         </li>
                         <li>
@@ -79,11 +70,11 @@ new Element("breadcrumb", ["elements" => [
                                 <p class="price-title">Цена:</p>
                                 <div class="price-form">
                                     <label class="price-label" for="in-1" >от</label>
-                                    <input class="price-input" type="number" id="in-1">
+                                    <input class="price-input" name="price_min" type="number" id="in-1">
                                 </div>
                                 <div class="price-form">
                                     <label class="price-label" for="in-2" >до</label>
-                                    <input class="price-input" type="number" id="in-2">
+                                    <input class="price-input" name="price_max" type="number" id="in-2">
                                 </div>
                                 <!-- <label for="in-2" >до</label>
                                 <input class="price-2" type="number" id="in-2"> -->

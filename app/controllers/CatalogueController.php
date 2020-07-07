@@ -5,6 +5,7 @@ namespace app\controllers;
 
 
 use app\base\BaseController;
+use app\components\BrandsComponent;
 use app\components\CategoriesComponent;
 use app\components\ProductsComponent;
 use app\database\BrandsTable;
@@ -32,19 +33,34 @@ class CatalogueController extends BaseController
         $category = $this->params['category'];
 
         $categoriesComponent = new CategoriesComponent();
-        $category =$categoriesComponent->getByLink($category);
+        $category = $categoriesComponent->getByLink($category);
 
         $sort = null;
+        $products = null;
 
         if (!empty($get = $this->page->getGet())) {
             $sort = isset($get['sort']) ? $get['sort'] : null;
-            $products = $this->component->getByCategorySorted($category['id'], $sort);
+
+            $brandsFilter = (!empty($get['brands'])) ? $get['brands'] : null;
+            $min = (isset($get['price_min']) && $get['price_min'] !== "") ? $get['price_min'] : null;
+            $max = (isset($get['price_min']) && $get['price_max'] !== "") ? $get['price_max'] : null;
+
+            if ($sort) {
+                $products = $this->component->getByCategorySorted($category['id'], $sort);
+            }
+
+            if ($brandsFilter || $min || $max) {
+                $products = $this->component->getByFilter($brandsFilter, $min, $max, $category['id']);
+            }
         }
         else {
             $products = $this->component->getByCategory($category['id']);
         }
 
-        new View("site/category", $this->page, ['category' => $category, 'products' => $products, 'sort' => $sort]);
+        $brandsComponent = new BrandsComponent();
+        $brands = $brandsComponent->getAll();
+
+        new View("site/category", $this->page, ['category' => $category, 'products' => $products, 'sort' => $sort, 'brands' => $brands]);
     }
 
     public function item()

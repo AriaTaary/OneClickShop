@@ -30,6 +30,7 @@ $routing->add('GET', '/search/', SearchController::class, 'search');
 /** Корзина и офорление заказов */
 $routing->add("GET", "/basket/", OrderController::class, "basket");
 $routing->add("GET", "/order/", OrderController::class, "order");
+$routing->add("POST", "/order/", OrderController::class, "purchase");
 $routing->add('POST', '/cart/', OrderController::class, 'cart');
 
 /** Авторизация */
