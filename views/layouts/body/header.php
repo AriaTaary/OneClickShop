@@ -1,3 +1,12 @@
+<?php
+
+use app\components\CategoriesComponent;
+
+$categoriesComponent = new CategoriesComponent();
+$categories = $categoriesComponent->getAll();
+
+?>
+
 <div class="header-content">
     <div class="logo">
         <img src="/img/Logo-without.png" class="logo-img">
@@ -22,21 +31,13 @@
                     <li class="menu-li-dropdown">
                         <a href="" class="dropbtn">Каталог</a>
                         <ul class="dropdown-content">
-                            <li>
-                                <a href="/category/mouses/">Мыши</a>
-                            </li>
-                            <li>
-                                <a href="/category/keyboards/">Клавиатуры</a>
-                            </li>
-                            <li>
-                                <a href="/category/earphones/">Наушники</a>
-                            </li>
-                            <li>
-                                <a href="/category/microphones/">Микрофоны</a>
-                            </li>
-                            <li>
-                                <a href="/category/carpets/">Ковры</a>
-                            </li>
+                            <?php if (!is_null($categories)) : ?>
+                                <?php foreach ($categories as $category) : ?>
+                                    <li>
+                                        <a href="/category/<?= $category['link'] ?>/"><?= $category['name'] ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </ul>
                     </li>
                     <li class="menu-li">

@@ -13,6 +13,6 @@
   "minimum-stability": "dev",
   "require": {
     "errcode/framework": "^0.6.0.1",
-    "ext-mysqli": "*"
+    "erusev/parsedown": "~1.7.0"
   }
 }

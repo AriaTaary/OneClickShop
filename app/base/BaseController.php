@@ -7,7 +7,7 @@ namespace app\base;
 use app\components\AuthComponent;
 use base\controllers\Controller;
 
-class BaseController extends Controller
+abstract class BaseController extends Controller
 {
     /**
      *  Проверка токена авторизации в COOKIE.

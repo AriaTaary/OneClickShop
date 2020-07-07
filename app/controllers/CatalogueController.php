@@ -5,12 +5,12 @@ namespace app\controllers;
 
 
 use app\base\BaseController;
-use app\components\CatalogueComponent;
+use app\components\ProductsComponent;
 use base\Page;
 
 class CatalogueController extends BaseController
 {
-    /** @var CatalogueComponent */
+    /** @var ProductsComponent */
     private $component;
 
     public function __construct(Page &$page, $params)
@@ -22,16 +22,16 @@ class CatalogueController extends BaseController
 
     public function category()
     {
-
+        $category = $this->params['category'];
     }
 
     public function item()
     {
-
+        $article = $this->params['article'];
     }
 
     private function setComponent()
     {
-        $this->component = new CatalogueComponent();
+        $this->component = new ProductsComponent();
     }
 }
