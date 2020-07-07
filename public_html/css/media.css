@@ -1,3 +1,270 @@
+/* @media all and (max-width: 1415px) {
+    .account-menu-li{
+
+        height: 50px;
+
+    }
+ }
+ */
+
+
+
+@media all and (max-width: 1200px) {
+   #active{
+       display: none;
+   }
+   .exchange-img{
+    /* max-height: 10vw; */
+    }
+}
+
+@media all and (max-width: 1085px) {
+    .product-page-ul{
+        justify-content: center;
+    }
+    .product-page-li:last-child{
+        margin-right: 4.35vw;
+    }
+
+    .form-order-info{
+        /* width: 400px; */
+    }
+
+ }
+
+@media all and (max-width: 1000px) {
+    .logo-img{
+        /* width: 40%; */
+        width: 20vw;
+    }
+
+    .header-text{
+        font-size: 20pt;
+    }
+
+    .card{
+        width: 280px;
+    }
+
+    .card-img{
+        width: 25vh;
+        height: 25vh;
+    }
+
+    .card-title{
+        font-size: 17px;
+    }
+
+    .card-price-bold{
+        font-size: 17px;
+    }
+
+    .login-button{
+      
+    }
+
+    .button-to-basket{
+        height: 35px;
+        width: 150px;
+    }
+
+    .button-to-basket-product{
+        height: 35px;
+        width: 190px !important;
+    }
+
+    .not-favorite, .favorite{
+        width: 190px;
+        height: 35px;
+    }
+
+    .button-to-basket-text{
+        font-size: 12pt;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        align-self: center;
+    }
+
+    .button-to-category{
+        height: 35px;
+        width: 150px;
+    }
+
+    .button-card-img{
+        width: 15px;
+    }
+
+    .button-to-go, .button-to-pay{
+        height: 35px;
+        width: 180px;
+    }
+
+    .button-to-сategory-text{
+        font-size: 12pt;
+    }
+
+    .card-buttons{
+        margin-top: 0px;
+    }
+
+    .normal-text{
+        font-size: 12pt;
+    }
+
+    .huge-text{
+        font-size: 18pt;
+    }
+
+    .grey-text{
+        font-size: 11pt;
+    }
+
+    .black-text{
+        font-size: 12pt;
+    }
+
+    
+ }
+
+
+ @media all and (max-width: 950px) {
+.position{
+    flex-wrap: wrap;
+}
+
+ }
+
+@media all and (max-width: 870px) {
+
+    .form-search-top, .content-top{
+        display: none;
+    }
+
+    .form-search-top input{
+        display: none;
+    }
+
+    .form-search-top button{
+        display: none;
+    }
+
+
+
+    .form-search-bottom form{
+        display: flex !important;
+    }
+
+    /* .button-basket, .button-person{
+        height: 30px;
+        min-width: 40px;
+    }
+
+    .basket, .person{
+        width: 20px;
+    } */
+
+    .search{
+        width: 15px;
+    }
+
+    .menu-desktop{
+        display: none;
+    }
+    
+    .menu-mobile{
+        display: flex;
+        padding-right: 0px;
+    }
+
+    .menu-li{
+        padding: 0px;
+        /* height: 100%; */
+        /* justify-content: flex-end; */
+    }
+
+    .navbar-nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .menu-a{
+        padding: 5px 0px;
+    }
+
+    .menu-dropdown-li{
+        /* list-style: square ; */
+        list-style: none;
+        /* margin-left: 20px; */
+    }
+
+    li{
+        color: white;
+    }
+
+    .navbar-toggler{
+        width: 100%;
+        margin-left: auto;
+    }
+
+    .header-content{
+        /* flex-direction: row-reverse; */
+    }
+
+    .choice{
+        flex-direction: column;
+    }
+
+    .sorting{
+        align-self: flex-start;
+    }
+    
+
+    .form-sort{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .filter{
+        margin-left: 0px;
+    }
+
+.exchange{
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.exchange-plus{
+    margin-right: 0px;
+    margin-bottom: 50px;
+    /* align-content: center; */
+    align-items: center;
+}
+
+.exchange-plus:last-child{
+    margin-bottom: 0px;
+}
+
+.exchange-img{
+    height: 8vw !important;
+}
+
+}
+
+.filter ul{
+
+    margin-top: 5px;
+    margin-left: 37px;
+
+
+  }
+
+
+
 @media all and (max-width: 800px) {
     .menu-desktop-li{
         display: none;
@@ -5,6 +272,141 @@
     .menu-mobile{
         display: flex;
     }
+
+    .footer-menu p{
+        font-size: 10pt;
+    }
+
+    .menu-footer{
+        font-size: 10pt;
+    }
+
+    .phone-img, .mail-img, .adress-img, .visa-img, .mastercard-img {
+        max-width: 20px;
+    }
+
+    .button-call{
+        height: 30px;
+        width: 90px;
+    }
+
+    .phone-img, .mail-img, .adress-img, .visa-img, .mastercard-img{
+        max-width: 30px;
+        padding-right: 10px;
+    }
+
+    .exchange-img{
+        /* height: 15vw; */
+    }
+
+    .account-view{
+        flex-direction: column;
+        margin-left: 0px;
+    }
+
+    .account-menu{
+        margin-left: 20px;
+        box-shadow: none;
+        padding-bottom: 0px;
+
+    }
+
+    .account-menu-ul{
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 0px;
+
+    }
+
+    .profile-category{
+        display: flex;
+        height: 40px;
+        margin: 0px;
+        align-items: center;
+    }
+
+    .account-exit{
+        display: none;
+    }
+
+    .account-exit-mobile{
+        display: flex !important;
+    }
+
+    .account-menu-element:not(:last-child){
+        margin-right: 20px;
+    }
+
+    .account-menu-li{
+        height: 35px;
+    }
+    
+
+}
+
+@media all and (max-width: 775px) {
+
+    td, .admin-menu-action{
+        font-size: 10pt;
+        padding: 5px !important;
+    }
+
+}
+
+
+@media all and (max-width: 775px) {
+
+    .map{
+        width: 45vw;
+        height: 360px;
+        margin-left: 20px;
+    }
+
+}
+
+@media all and (max-width: 660px) {
+
+    .product-page-ul{
+        justify-content: center;
+    }
+
+    .product-page-li:last-child{
+        margin-right: 4.35vw;
+    }
+
+    .card-img{
+        width: 20vh;
+        height: 20vh;
+    }
+
+    .car-img{
+        display: none;
+    }
+
+    .delivery-text{
+        margin-right: 0px;
+    }
+
+
+}
+
+@media all and (max-width: 620px) {
+
+    td, .admin-menu-action{
+        font-size: 8pt;
+        padding: 3px !important;
+    }
+
+}
+
+@media all and (max-width: 600px) {
+
+    .basket-product-name{
+        margin-right: 0px;
+        text-align: center;
+    }
+
 }
 
 

@@ -16,7 +16,8 @@ return [
     'styles' => [
         'main.css',
         'fonts.css',
-        'media.css'
+        'media.css',
+        'animate.css',
     ],
 
     /** Названия скриптовых файлов из public_html/js/, которые нужно подключить */
@@ -25,6 +26,7 @@ return [
         'jquery.js',
         'forms.js',
         'yandexmap.js',
+        'wow.min.js',
     ],
 
     /** Ссылка на favicon относительно public_html/ */

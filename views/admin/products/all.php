@@ -13,7 +13,7 @@
     </div>
 
     <div class="account-content">
-        <p class="header-text">Товары</p>
+        <p class="header-text">Все товары</p>
         <div class="orders">
             <div>
                 <a href="/profile/admin/products/add/"><button class="login-button add">Добавить</button></a>

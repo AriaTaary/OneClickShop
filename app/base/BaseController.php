@@ -17,6 +17,7 @@ abstract class BaseController extends Controller
      */
     protected function checkAuthToken()
     {
+        // $_SESSION = [];
         if (isset($_COOKIE['auth_token']) && !empty($_COOKIE['auth_token'])) {
             $component = new AuthComponent();
             $component->setSession($_COOKIE['auth_token']);

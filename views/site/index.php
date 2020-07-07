@@ -41,9 +41,9 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
 </div>
 
 <div class="new-content">
-    <p class="header-text">Новинки</p>
+    <p class="header-text wow animated fadeInLeft delay-0.5s">Новинки</p>
     <div class="layer">
-        <div class="poduct-list">
+        <div class="poduct-list wow animated fadeInRight delay-0.5s">
             <ul class="product-ul">
                 <?php foreach ($products as $product) : ?>
                     <li class="product-li">
@@ -59,8 +59,10 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                                     <!-- /.card-heading -->
                                     <div class="card-buttons">
                                         <button class="button-to-basket" onclick="cart(<?= $product['id'] ?>, 1)">
-                                            <span>В корзину</span>
+                                            <div class="button-content">
+                                            <span class="button-to-basket-text">В корзину</span>
                                             <img src="/img/basket-2.svg" alt="" class="button-card-img">
+                                            </div>
                                         </button>
                                         <strong class="card-price-bold"><?= $product['price'] ?>₽</strong>
                                     </div>
@@ -76,9 +78,9 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
 </div>
 
 <div class="category-content">
-    <p class="header-text">Категории</p>
+    <p class="header-text wow animated fadeInLeft delay-0.5s">Категории</p>
     <div class="layer">
-        <div class="poduct-list">
+        <div class="poduct-list wow animated fadeInRight delay-0.5s">
             <ul class="product-ul">
                 <?php foreach ($categories as $category) : ?>
                     <li class="product-li">
@@ -92,7 +94,14 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
                                 <!-- /.card-heading -->
                                 <div class="card-buttons">
                                     <a href="/category/<?= $category['link'] ?>/" class="button-card-text">
-                                        <button class="button-to-category">Перейти</button>
+                                        <button class="button-to-category">
+
+                                        <div class="button-content">
+                                            <span class="button-to-сategory-text">Перейти</span>
+                                            <img src="/img/arrow.png" alt="" class="button-card-img">
+                                        </div>
+                       
+                                        </button>
                                     </a>
                                 </div>
                             </div>
@@ -107,23 +116,23 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
 </div>
 
 <div class="sponsor-content">
-    <p class="header-text">Спонсоры</p>
+    <p class="header-text wow animated fadeInLeft delay-0.5s">Спонсоры</p>
     <div class="sponsors">
-        <div class="poduct-list">
-            <ul class="product-ul">
-                <li class="product-li">
+        <div class="poduct-list wow animated fadeInRight delay-0.5s">
+            <ul class="product-ul sponsors-ul">
+                <li class="product-li sponsors-li">
                     <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
-                <li class="product-li">
+                <li class="product-li sponsors-li">
                     <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
-                <li class="product-li">
+                <li class="product-li sponsors-li">
                     <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
-                <li class="product-li">
+                <li class="product-li sponsors-li">
                     <img class="sponsor-img" src="/img/hyperx.png">
                     <!-- <p class="sponsor-name">Название</p> -->
                 </li>
@@ -131,9 +140,5 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
         </div>
     </div>
 </div>
-
-
-
-
 
 </div>

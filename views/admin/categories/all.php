@@ -13,7 +13,7 @@
     </div>
 
     <div class="account-content">
-        <p class="header-text">Категории</p>
+        <p class="header-text">Все категории</p>
         <div class="orders">
             <div>
                 <a href="/profile/admin/categories/add/"><button class="login-button add">Добавить</button></a>

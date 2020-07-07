@@ -38,7 +38,13 @@
                 </div>
                 <div class="order-button">
                     <a href="/order/">
-                        <button class="button-to-pay" type="submit">Оформить заказ</button>
+
+                        <button class="button-to-pay" type="submit">
+                            
+                        <div class="button-content">
+                                <span class="button-to-basket-text">Оформить заказ</span>
+                        </div>
+                        </button>
                     </a>
                 </div>
             </form>

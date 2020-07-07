@@ -37,13 +37,21 @@
                 <?php if ($sum !== 0) : ?>
                 <div class="order-button">
                     <a href="/order/">
-                        <button class="button-to-pay" type="submit">Оформить заказ</button>
+                            <button class="button-to-pay" type="submit">
+                                <div class="button-content">
+                                        <span class="button-to-basket-text">Оформить заказ</span>
+                                </div>
+                            </button>
                     </a>
                 </div>
                 <?php endif; ?>
                 <div class="order-button">
                     <a href="/">
-                        <button class="button-to-go"type="submit">Продолжить покупки</button>
+                        <button class="button-to-go"type="submit">
+                        <div class="button-content">
+                                        <span class="button-to-basket-text">Продолжить покупки</span>
+                                </div>
+                        </button>
                     </a>
                 </div>
             </div>

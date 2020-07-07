@@ -33,10 +33,12 @@ $page->title = "Поиск - OneClick";
                                     <!-- /.card-heading -->
                                     <div class="card-buttons">
                                         <a href="/products/" class="links">
-                                            <button class="button-to-basket">
-                                                <span class="button-card-text">В корзину</span>
-                                                <img src="/img/basket-2.svg" class="button-card-img">
-                                            </button>
+                                        <button class="button-to-basket">
+                                            <div class="button-content">
+                                            <span class="button-to-basket-text">В корзину</span>
+                                            <img src="/img/basket-2.svg" alt="" class="button-card-img">
+                                            </div>
+                                    </button>
                                         </a>
                                         <strong class="card-price-bold"><?= $product['price'] ?>₽</strong>
                                     </div>

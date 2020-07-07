@@ -27,7 +27,7 @@ new Element("breadcrumb", ["elements" => [
 
     <div>
         <ul class="choice">
-            <li class="sort">
+            <li class="sorting">
                 <form name="sort" action="/category/<?= $category['link'] ?>/" class="form-sort">
                     <label for="select-1" class="sort">
                         <p>Сортировать</p>
@@ -125,8 +125,10 @@ new Element("breadcrumb", ["elements" => [
                                 <div class="card-buttons">
                                     <a href="/products/" class="links">
                                     <button class="button-to-basket">
-                                        <span class="button-card-text">В корзину</span>
-                                        <img src="/img/basket-2.svg" class="button-card-img">
+                                            <div class="button-content">
+                                            <span class="button-to-basket-text">В корзину</span>
+                                            <img src="/img/basket-2.svg" alt="" class="button-card-img">
+                                            </div>
                                     </button>
                                     </a>
                                     <strong class="card-price-bold"><?= $product['price'] ?>₽</strong>
