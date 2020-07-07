@@ -2,6 +2,8 @@
 
 /**
  * @var $page base\Page;
+ * @var $products array
+ * @var $categories array
  */
 
 $page->title = "OneClick - интернет-магазин компьютерной техники";
@@ -43,46 +45,12 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
     <div class="layer">
         <div class="poduct-list">
             <ul class="product-ul">
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
+                <?php foreach ($products as $product) : ?>
+                    <li class="product-li">
+                        <img class="product-img" src="/uploads/<?= $product['image'] ?>">
+                        <p class="product-name"><?= $product['name'] ?></p>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
@@ -93,46 +61,14 @@ $page->keywords = "oneclick, компьютеры, интернет-магази
     <div class="layer">
         <div class="poduct-list">
             <ul class="product-ul">
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
-                <li class="product-li">
-                    <img class="product-img" src="img/logitech-g502-hero-3-1000x1000.jpg">
-                    <p class="product-name">Название</p>
-                </li>
+                <?php foreach ($categories as $category) : ?>
+                    <li class="product-li">
+                        <img class="product-img" src="/uploads/<?= $category['image'] ?>">
+                        <p class="product-name">
+                            <a href="/category/<?= $category['link'] ?>/"><?= $category['name'] ?></a>
+                        </p>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>

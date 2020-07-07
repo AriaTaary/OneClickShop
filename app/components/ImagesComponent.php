@@ -20,6 +20,13 @@ class ImagesComponent extends BaseComponent
         return $this->table->get("*", ['product_id' => $product_id]);
     }
 
+    public function getOneImage($product_id)
+    {
+        $this->setTable();
+
+        return $this->table->get("*", ['product_id' => $product_id], null, 1);
+    }
+
     public function add($filename, $product_id)
     {
         $this->setTable();

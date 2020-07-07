@@ -41,6 +41,28 @@ class ProductsComponent extends BaseComponent
         }
     }
 
+    public function getNewProducts($num)
+    {
+        $this->setTable();
+
+        $products = $this->table->get("*", null, ['id desc'], $num);
+
+        $imagesComponent = new ImagesComponent();
+        foreach ($products as $key => $product) {
+            $images = $imagesComponent->getOneImage($product['id']);
+            if (!empty($images)) {
+                $image = $images[0]['name'];
+            }
+            else {
+                $image = "no_image.jpeg";
+            }
+
+            $products[$key]['image'] = $image;
+        }
+
+        return $products;
+    }
+
     public function getById($id)
     {
         $this->setTable();

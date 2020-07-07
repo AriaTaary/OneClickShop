@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\base\BaseController;
+use app\components\CategoriesComponent;
+use app\components\ProductsComponent;
 use base\Page;
 use base\View\View;
 
@@ -16,7 +18,13 @@ class SiteController extends BaseController
 
     public function index()
     {
-        new View("site/index", $this->page);
+        $productsComponent = new ProductsComponent();
+        $products = $productsComponent->getNewProducts(15);
+
+        $categoriesComponent = new CategoriesComponent();
+        $categories = $categoriesComponent->getAll();
+
+        new View("site/index", $this->page, ['products' => $products,'categories' => $categories]);
     }
 
     public function delivery()
