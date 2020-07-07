@@ -38,7 +38,7 @@
     </div>
     <div class="account-menu-element">
     <li class="account-menu-li account-exit">
-        <a href="" class="account-menu-a menu-a menu-exit"><button class="login-button enter">Выйти</button></a>
+        <a href="/logout/" class="account-menu-a menu-a menu-exit"><button class="login-button enter">Выйти</button></a>
     </li>
     </div>
 </ul>

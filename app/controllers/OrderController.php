@@ -42,9 +42,14 @@ class OrderController extends BaseController
             $sum += $item;
         }
 
+        $count = 0;
+        foreach ($cart as $item) {
+            $count += $item;
+        }
+
         $_SESSION['cart_sum'] = $sum;
 
-        new View("site/basket", $this->page, ['products' => $products, 'sum' => $sum]);
+        new View("site/basket", $this->page, ['products' => $products, 'sum' => $sum, 'count' => $count]);
     }
 
     public function order()

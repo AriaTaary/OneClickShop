@@ -114,29 +114,27 @@ new Element("breadcrumb", ["elements" => [
                 <?php foreach ($products as $product) : ?>
                 <li class="product-page-li">
                     <!-- /.card -->
-                    <a href="/products/<?= $product['article'] ?>/">
-                        <div class="card product-page-card">
-                            <img src="/uploads/<?= $product['image'] ?>" class="card-img">
+                    <a class="product-link" href="/products/<?= $product['article'] ?>/">
+                        <div class="card">
+                            <img src="/uploads/<?= $product['image'] ?>" alt="" class="card-img">
                             <div class="card-text">
                                 <div class="card-heading">
                                     <h3 class="card-title card-title-reg"><?= $product['name'] ?></h3>
                                 </div>
+                    </a>
                                 <!-- /.card-heading -->
                                 <div class="card-buttons">
-                                    <a href="/products/" class="links">
-                                    <button class="button-to-basket">
-                                            <div class="button-content">
-                                            <span class="button-to-basket-text">В корзину</span>
-                                            <img src="/img/basket-2.svg" alt="" class="button-card-img">
-                                            </div>
+                                    <button class="button-to-basket" onclick="cart(<?= $product['id'] ?>, 1)">
+                                        <div class="button-content">
+                                        <span class="button-to-basket-text">В корзину</span>
+                                        <img src="/img/basket-2.svg" alt="" class="button-card-img">
+                                        </div>
                                     </button>
-                                    </a>
                                     <strong class="card-price-bold"><?= $product['price'] ?>₽</strong>
                                 </div>
                             </div>
                             <!-- /.card-text -->
                         </div>
-                    </a>
                     <!-- /.card -->
                 </li>
                 <?php endforeach; ?>

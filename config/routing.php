@@ -38,6 +38,7 @@ $routing->add('POST', '/cart/', OrderController::class, 'cart');
 /** Авторизация */
 $routing->add("POST", "/auth/", AuthController::class, "auth");
 $routing->add("POST", "/register/", AuthController::class, "register");
+$routing->add('GET', '/logout/', AuthController::class, 'logout');
 
 /** Личный кабинет */
 $routing->add("GET", "/profile/", ProfileController::class, "orders", true);

@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use app\base\BaseController;
 use app\components\AuthComponent;
+use base\App;
 use base\Page;
 use base\View\View;
 
@@ -55,6 +56,18 @@ class AuthController extends BaseController
         }
         else {
             new View("status/register_false", $this->page);
+        }
+    }
+
+    public function logout()
+    {
+        if (App::$session->user->isAuth()) {
+            if ($this->component->logout()) {
+                header("Location: /");
+            }
+        }
+        else {
+            header("/");
         }
     }
 }

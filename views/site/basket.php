@@ -2,6 +2,7 @@
 /**
  * @var $products
  * @var $sum
+ * @var $count
  */
 ?>
 
@@ -9,7 +10,7 @@
         
 <div class="main-content">
 
-    <p class="basket-header-text">Количество товаров в корзине:</p>
+    <p class="basket-header-text">Количество товаров в корзине: <?= $count ?></p>
 
     <?php foreach ($products as $product) : ?>
     <div class="position">
