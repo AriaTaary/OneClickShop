@@ -8,7 +8,7 @@ return [
 
     /** Относительные ссылки на главную страницу и страницу авторизации */
     'homeUrl' => '/',
-    'authUrl' => '/auth/',
+    'authUrl' => '/',
 
     'database' => $database,
 

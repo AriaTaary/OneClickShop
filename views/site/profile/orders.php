@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var $orders
+ */
+?>
+
 <div class="account-view">
 
     <div class="account-menu">
@@ -6,52 +12,58 @@
 
     <div class="account-content">
         <p class="header-text">Заказы</p>
+
         <div class="orders">
+            <?php if (empty($orders)) : ?>
+                <p>Заказов пока нет</p>
+            <?php else : ?>
 
-            <!-- Order-position блок нового заказа -->
+                <?php foreach ($orders as $order) : ?>
+                <?php
+                    $time = strtotime($order['date']);
+                    $order['date'] = date("d.m.Y H:i", $time);
+                ?>
 
-            <div class="order position">
-                <div class="order-header">
-                    <p>Заказ № 0000000</p>
-                    <p>от 20.20.20</p>
-                </div>
-                <div class="order-body">
-                    <div class="separate-orders">
+                <div class="order position">
+                    <div class="order-header">
+                        <p>Заказ № <?= $order['id'] ?></p>
+                        <p>от <?= $order['date'] ?></p>
+                    </div>
+                    <div class="order-body">
+                        <div class="separate-orders">
 
-                        <!-- Position-item блок нового элемента заказа -->
-
-                        <div class=position-item>
-                            <img class="basket-product-img" src="/img/logitech-g502-hero-3-1000x1000.jpg" alt="">
-                            <div class="position-info">
-                                <p class="basket-product-name">Название товара</p>
-                                <div class="quantity">
-                                    <p class="counter-tag">Количество:</p>
-                                    <span class="counter">1</span>
+                            <?php foreach ($order['products'] as $product) : ?>
+                                <div class=position-item>
+                                    <img class="basket-product-img" src="/uploads/<?= $product['product']['image'] ?>" alt="">
+                                    <div class="position-info">
+                                        <p class="basket-product-name"><?= $product['product']['name'] ?></p>
+                                        <div class="quantity">
+                                            <p class="counter-tag">Количество:</p>
+                                            <span class="counter"><?= $product['count'] ?></span>
+                                        </div>
+                                        <p><?= $product['product']['price'] ?> ₽</p>
+                                    </div>
                                 </div>
-                                <p>0 000 ₽</p>
+                            <?php endforeach; ?>
+                        </div>
+                        <!-- /.separate-orders -->
+                        <div class="order-info">
+                            <div class="order-status">
+                                <p>Статус товара:</p>
+                                <p><?= $order['status'] ?></p>
+                            </div>
+                            <div class="order-price">
+                                <p>Итого:</p>
+                                <p><?= $order['sum'] ?> ₽</p>
                             </div>
                         </div>
-
                     </div>
-                    <!-- /.separate-orders -->
-                    <div class="order-info">
-                        <div class="order-status">
-                            <p>Статус товара:</p>
-                            <p>Выполнен</p>
-                        </div>
-                        <div class="order-price">
-                            <p>Итого:</p>
-                            <p>0 000 ₽</p>
-                        </div>
-                    </div>
+                    <!-- /.order-body -->
                 </div>
-                <!-- /.order-body -->
-            </div>
-            <!-- /.order-position -->
-
-
+                <!-- /.order-position -->
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <!-- /.orders -->
     </div>
     <!-- /.account-content -->
 </div>

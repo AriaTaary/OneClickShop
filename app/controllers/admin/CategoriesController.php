@@ -59,7 +59,7 @@ class CategoriesController extends AdminController
         $add = $this->component->add($name, $link, $image);
 
         if ($add === true) {
-            header("Location: /admin/categories/");
+            header("Location: /profile/admin/categories/");
         }
         else {
             new View("admin/categories/form", $this->page, ['data' => $post, 'error' => $add]);

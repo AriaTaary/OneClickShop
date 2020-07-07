@@ -38,11 +38,11 @@ $routing->add("POST", "/auth/", AuthController::class, "auth");
 $routing->add("POST", "/register/", AuthController::class, "register");
 
 /** Личный кабинет */
-$routing->add("GET", "/profile/", ProfileController::class, "orders");
-$routing->add("GET", "/profile/favourites/", ProfileController::class, "favourites");
-$routing->add("GET", "/profile/settings/", ProfileController::class, "settings");
-$routing->add("GET", "/profile/edit/", ProfileController::class, "form");
-$routing->add("POST", "/profile/edit/", ProfileController::class, "edit");
+$routing->add("GET", "/profile/", ProfileController::class, "orders", true);
+$routing->add("GET", "/profile/favourites/", ProfileController::class, "favourites", true);
+$routing->add("GET", "/profile/settings/", ProfileController::class, "settings", true);
+$routing->add("GET", "/profile/edit/", ProfileController::class, "form", true);
+$routing->add("POST", "/profile/edit/", ProfileController::class, "edit", true);
 
 /** Админка */
 $routing->add('GET', '/profile/admin/categories/', CategoriesController::class, 'all');

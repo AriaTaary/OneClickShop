@@ -7,6 +7,11 @@ namespace app\controllers;
 use app\base\BaseController;
 use app\components\AuthComponent;
 use app\database\FavouriteProductsTable;
+use app\database\ImagesTable;
+use app\database\OrderProductsTable;
+use app\database\OrdersTable;
+use app\database\OrderStatusTable;
+use app\database\ProductsTable;
 use app\database\UsersTable;
 use base\App;
 use base\View\View;
@@ -15,7 +20,44 @@ class ProfileController extends BaseController
 {
     public function orders()
     {
-        new View("site/profile/orders", $this->page);
+        $ordersTable = new OrdersTable();
+        $orders = $ordersTable->get("*", ['user_id' => App::$session->user->getId()]);
+
+        if (!empty($orders)) {
+            $orderProductsTable = new OrderProductsTable();
+            $productsTable = new ProductsTable();
+            $orderStatusTable = new OrderStatusTable();
+            $imagesTable = new ImagesTable();
+
+            foreach ($orders as $key => $order) {
+                $productIDs = $orderProductsTable->get("*", ['order_id' => $order['id']]);
+
+                $status = $orderStatusTable->get("*", ['id' => $order['status_id']]);
+                $order['status'] = $status[0]['runame'];
+
+                $order['products'] = [];
+                foreach ($productIDs as $productID) {
+                    $product = $productsTable->get("*", ['id' => $productID['product_id']]);
+
+                    if (!empty($product)) {
+                        $product = $product[0];
+
+                        $images = $imagesTable->get("*", ['product_id' => $product['id']]);
+                        $image = $images[0]['name'];
+                        $product['image'] = $image;
+
+                        $order['products'][] = [
+                            'product' => $product,
+                            'count' => $productID['count']
+                        ];
+                    }
+
+                    $orders[$key] = $order;
+                }
+            }
+        }
+
+        new View("site/profile/orders", $this->page, ['orders' => $orders]);
     }
 
     public function favourites()

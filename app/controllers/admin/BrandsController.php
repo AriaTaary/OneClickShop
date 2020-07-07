@@ -57,7 +57,7 @@ class BrandsController extends BaseController
         $add = $this->component->add($name, $link);
 
         if ($add === true) {
-            header("Location: /admin/brands/");
+            header("Location: /profile/admin/brands/");
         }
         else {
             new View("admin/brands/form", $this->page, ['data' => $post, 'error' => $add]);
@@ -75,7 +75,7 @@ class BrandsController extends BaseController
         $edit = $this->component->edit($id, $name, $link);
 
         if ($edit === true) {
-            header("Location: /admin/brands/");
+            header("Location: /profile/admin/brands/");
         }
         else {
             new View("admin/brands/form", $this->page, ['data' => $post, 'error' => $edit, 'edit' => true]);
